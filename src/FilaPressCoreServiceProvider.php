@@ -2,9 +2,9 @@
 
 namespace RectitudeOpen\FilaPressCore;
 
+use RectitudeOpen\FilaPressCore\Commands\FilaPressCoreCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use RectitudeOpen\FilaPressCore\Commands\FilaPressCoreCommand;
 
 class FilaPressCoreServiceProvider extends PackageServiceProvider
 {
@@ -16,10 +16,10 @@ class FilaPressCoreServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('filapress-core')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_filapress_core_table')
-            ->hasCommand(FilaPressCoreCommand::class);
+            ->name('filapress-core');
+        // ->hasConfigFile()
+        // ->hasViews()
+        // ->hasMigration('create_filapress_core_table')
+        // ->hasCommand(FilaPressCoreCommand::class);
     }
 }
