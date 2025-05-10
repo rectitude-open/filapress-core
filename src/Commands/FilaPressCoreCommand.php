@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace RectitudeOpen\FilaPressCore\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class FilaPressCoreCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'filapress-core';
 
     public $description = 'My command';
 

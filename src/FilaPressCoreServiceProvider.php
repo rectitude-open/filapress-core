@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace RectitudeOpen\FilaPressCore;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use VendorName\Skeleton\Commands\SkeletonCommand;
+use RectitudeOpen\FilaPressCore\Commands\FilaPressCoreCommand;
 
-class SkeletonServiceProvider extends PackageServiceProvider
+class FilaPressCoreServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -16,10 +16,10 @@ class SkeletonServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('skeleton')
+            ->name('filapress-core')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_migration_table_name_table')
-            ->hasCommand(SkeletonCommand::class);
+            ->hasMigration('create_filapress_core_table')
+            ->hasCommand(FilaPressCoreCommand::class);
     }
 }
