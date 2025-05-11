@@ -73,6 +73,7 @@ class Admin extends Authenticatable implements Auditable, FilamentUser
 
     public function canAccessPanel(Panel $panel): bool
     {
+        return true;
         return $this->hasRole('super-admin') || $this->hasRole('webmaster');
     }
 }

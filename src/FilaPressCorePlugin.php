@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
 use RectitudeOpen\FilaPressCore\Filament\Resources\AdminResource;
 use TomatoPHP\FilamentUsers\FilamentUsersPlugin;
+use RectitudeOpen\FilaPressCore\Filament\Pages\Auth\Login;
 
 class FilaPressCorePlugin implements Plugin
 {
@@ -26,6 +27,7 @@ class FilaPressCorePlugin implements Plugin
     {
         $panel
             ->path('admin-'.config('filapress-core.admin_path', 'admin'))
+            ->login(Login::class)
             ->font(
                 'Inter',
                 url: asset('/admin-assets/'.config('filapress-core.admin_path', 'admin').'/css/fonts.css'),
