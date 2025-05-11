@@ -3,6 +3,7 @@
 namespace RectitudeOpen\FilaPressCore;
 
 use Filament\Contracts\Plugin;
+use Filament\FontProviders\LocalFontProvider;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Notifications\Livewire\Notifications;
 use Filament\Panel;
@@ -21,13 +22,19 @@ class FilaPressCorePlugin implements Plugin
     public function register(Panel $panel): void
     {
         $panel
+            ->path('admin-'.config('filapress-core.admin_path', 'admin'))
+            ->font(
+                'Inter',
+                url: asset('/admin-assets/'.config('filapress-core.admin_path', 'admin').'/css/fonts.css'),
+                provider: LocalFontProvider::class,
+            )
             ->resources([]);
     }
 
     public function boot(Panel $panel): void
     {
         Livewire::setScriptRoute(function ($handle) {
-            return Route::get('/admin-assets/'.config('admin.path').'/livewire/livewire.js', $handle);
+            return Route::get('/admin-assets/'.config('filapress-core.admin_path', 'admin').'/livewire/livewire.js', $handle);
         });
 
         DateTimePicker::configureUsing(function (DateTimePicker $component): void {

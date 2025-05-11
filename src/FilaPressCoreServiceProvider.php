@@ -16,8 +16,8 @@ class FilaPressCoreServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('filapress-core');
-        // ->hasConfigFile()
+            ->name('filapress-core')
+            ->hasConfigFile();
         // ->hasViews()
         // ->hasMigration('create_filapress_core_table')
         // ->hasCommand(FilaPressCoreCommand::class);
