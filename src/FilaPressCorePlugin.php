@@ -2,6 +2,7 @@
 
 namespace RectitudeOpen\FilaPressCore;
 
+use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
 use Filament\Contracts\Plugin;
 use Filament\FontProviders\LocalFontProvider;
 use Filament\Forms\Components\DateTimePicker;
@@ -11,6 +12,8 @@ use Filament\Support\Enums\Alignment;
 use Filament\Tables\Columns\TextColumn;
 use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
+use RectitudeOpen\FilaPressCore\Filament\Resources\AdminResource;
+use TomatoPHP\FilamentUsers\FilamentUsersPlugin;
 
 class FilaPressCorePlugin implements Plugin
 {
@@ -28,7 +31,14 @@ class FilaPressCorePlugin implements Plugin
                 url: asset('/admin-assets/'.config('filapress-core.admin_path', 'admin').'/css/fonts.css'),
                 provider: LocalFontProvider::class,
             )
-            ->resources([]);
+            ->resources([
+                config('filament-ban-manager.filament_resource', AdminResource::class),
+            ])
+            ->plugins([
+                FilamentShieldPlugin::make(),
+                FilamentUsersPlugin::make(),
+            ])
+            ->authGuard('admin');
     }
 
     public function boot(Panel $panel): void

@@ -17,7 +17,14 @@ class FilaPressCoreServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('filapress-core')
-            ->hasConfigFile();
+            ->hasConfigFile([
+                'filapress-core',
+                'auth',
+                'audit',
+                'filament-auditing',
+                'filament-users',
+            ])
+            ->hasMigrations([]);
         // ->hasViews()
         // ->hasMigration('create_filapress_core_table')
         // ->hasCommand(FilaPressCoreCommand::class);
