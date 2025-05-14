@@ -3,4 +3,5 @@
 return [
     'admin_path' => env('ADMIN_PATH', 'admin'),
     'admin_model' => RectitudeOpen\FilaPressCore\Models\Admin::class,
+    'admin_filament_resource' => RectitudeOpen\FilaPressCore\Filament\Resources\AdminResource::class,
 ];

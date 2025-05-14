@@ -38,7 +38,7 @@ class FilaPressCorePlugin implements Plugin
                 provider: LocalFontProvider::class,
             )
             ->resources([
-                config('filament-ban-manager.filament_resource', AdminResource::class),
+                config('filapress-core.admin_filament_resource', AdminResource::class),
             ])
             ->plugins([
                 FilamentShieldPlugin::make(),
