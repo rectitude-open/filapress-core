@@ -10,11 +10,15 @@ use Filament\Notifications\Livewire\Notifications;
 use Filament\Panel;
 use Filament\Support\Enums\Alignment;
 use Filament\Tables\Columns\TextColumn;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
-use RectitudeOpen\FilaPressCore\Filament\Resources\AdminResource;
-use TomatoPHP\FilamentUsers\FilamentUsersPlugin;
+use RectitudeOpen\FilamentNews\FilamentNewsPlugin;
+use RectitudeOpen\FilamentNews\Models\News;
 use RectitudeOpen\FilaPressCore\Filament\Pages\Auth\Login;
+use RectitudeOpen\FilaPressCore\Filament\Resources\AdminResource;
+use RectitudeOpen\FilaPressCore\Policies\NewsPolicy;
+use TomatoPHP\FilamentUsers\FilamentUsersPlugin;
 
 class FilaPressCorePlugin implements Plugin
 {
@@ -39,6 +43,7 @@ class FilaPressCorePlugin implements Plugin
             ->plugins([
                 FilamentShieldPlugin::make(),
                 FilamentUsersPlugin::make(),
+                FilamentNewsPlugin::make(),
             ])
             ->authGuard('admin');
     }
@@ -61,6 +66,8 @@ class FilaPressCorePlugin implements Plugin
         });
 
         Notifications::alignment(Alignment::Center);
+
+        Gate::policy(News::class, NewsPolicy::class);
     }
 
     public static function make(): static
