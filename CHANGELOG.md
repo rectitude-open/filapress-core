@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.1.0](https://github.com/rectitude-open/filapress-core/compare/v1.0.0...v1.1.0) (2025-05-14)
+
+
+### Features
+
+* add filament news ([b7f0933](https://github.com/rectitude-open/filapress-core/commit/b7f093390a71216b4a46a4152448baca08e2f534))
+* add FilaPressCorePlugin class and update filaments version in composer.json ([23878f5](https://github.com/rectitude-open/filapress-core/commit/23878f5076900b1f0ecb94d16d1ea2da04e54ffe))
+* add Login page ([904191e](https://github.com/rectitude-open/filapress-core/commit/904191e9fbd5ffe80a40b78552159b9d35a9dbfa))
+* add user/audit feature ([10fbe9f](https://github.com/rectitude-open/filapress-core/commit/10fbe9f582c11f2fedf04db3c9ed555403955ead))
+* update admin path configuration and improve FilaPressCorePlugin registration ([88b164d](https://github.com/rectitude-open/filapress-core/commit/88b164d9eed1579e58d1788b527d7b552f273870))
+
 ## 1.0.0 (2025-05-10)
 
 
