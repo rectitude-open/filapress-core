@@ -22,8 +22,10 @@ class FilaPressCoreServiceProvider extends PackageServiceProvider
                 'auth',
                 'audit',
                 'filament-auditing',
+                'filament-shield',
                 'filament-users',
                 'filament-news',
+                'filament-ban-manager',
             ])
             ->hasMigrations([]);
         // ->hasViews()

@@ -13,12 +13,15 @@ use Filament\Tables\Columns\TextColumn;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
+use RectitudeOpen\FilamentBanManager\FilamentBanManagerPlugin;
+use RectitudeOpen\FilamentBanManager\Models\Ban;
 use RectitudeOpen\FilamentNews\FilamentNewsPlugin;
 use RectitudeOpen\FilamentNews\Models\News;
 use RectitudeOpen\FilaPressCore\Filament\Pages\Auth\Login;
 use RectitudeOpen\FilaPressCore\Filament\Resources\AdminResource;
 use RectitudeOpen\FilaPressCore\Models\Admin;
 use RectitudeOpen\FilaPressCore\Policies\AdminPolicy;
+use RectitudeOpen\FilaPressCore\Policies\BanPolicy;
 use RectitudeOpen\FilaPressCore\Policies\NewsPolicy;
 use RectitudeOpen\FilaPressCore\Policies\RolePolicy;
 use Spatie\Permission\Models\Role;
@@ -48,6 +51,7 @@ class FilaPressCorePlugin implements Plugin
                 FilamentShieldPlugin::make(),
                 FilamentUsersPlugin::make(),
                 FilamentNewsPlugin::make(),
+                FilamentBanManagerPlugin::make(),
             ])
             ->authGuard('admin');
     }
@@ -74,6 +78,7 @@ class FilaPressCorePlugin implements Plugin
         Gate::policy(Admin::class, AdminPolicy::class);
         Gate::policy(Role::class, RolePolicy::class);
         Gate::policy(News::class, NewsPolicy::class);
+        Gate::policy(Ban::class, BanPolicy::class);
     }
 
     public static function make(): static
