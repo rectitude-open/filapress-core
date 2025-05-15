@@ -22,9 +22,12 @@ use RectitudeOpen\FilaPressCore\Filament\Resources\AdminResource;
 use RectitudeOpen\FilaPressCore\Models\Admin;
 use RectitudeOpen\FilaPressCore\Policies\AdminPolicy;
 use RectitudeOpen\FilaPressCore\Policies\BanPolicy;
+use RectitudeOpen\FilaPressCore\Policies\MailLogPolicy;
 use RectitudeOpen\FilaPressCore\Policies\NewsPolicy;
 use RectitudeOpen\FilaPressCore\Policies\RolePolicy;
 use Spatie\Permission\Models\Role;
+use Tapp\FilamentMailLog\FilamentMailLogPlugin;
+use Tapp\FilamentMailLog\Models\MailLog;
 use TomatoPHP\FilamentUsers\FilamentUsersPlugin;
 
 class FilaPressCorePlugin implements Plugin
@@ -46,12 +49,14 @@ class FilaPressCorePlugin implements Plugin
             )
             ->resources([
                 config('filapress-core.admin_filament_resource', AdminResource::class),
+                \RectitudeOpen\FilaPressCore\Filament\Resources\MailLogResource::class,
             ])
             ->plugins([
                 FilamentShieldPlugin::make(),
                 FilamentUsersPlugin::make(),
                 FilamentNewsPlugin::make(),
                 FilamentBanManagerPlugin::make(),
+                FilamentMailLogPlugin::make(),
             ])
             ->authGuard('admin');
     }
@@ -79,6 +84,7 @@ class FilaPressCorePlugin implements Plugin
         Gate::policy(Role::class, RolePolicy::class);
         Gate::policy(News::class, NewsPolicy::class);
         Gate::policy(Ban::class, BanPolicy::class);
+        Gate::policy(MailLog::class, MailLogPolicy::class);
     }
 
     public static function make(): static
