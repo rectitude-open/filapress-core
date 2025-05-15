@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.2.0](https://github.com/rectitude-open/filapress-core/compare/v1.1.0...v1.2.0) (2025-05-15)
+
+
+### Features
+
+* add Admin and Role policies for authorization ([eb5d973](https://github.com/rectitude-open/filapress-core/commit/eb5d973712e33f1695b49d98322b05e1060d5967))
+* add filament shield configuration file ([490de9a](https://github.com/rectitude-open/filapress-core/commit/490de9a2523c2440c17c18f8008e5cc9fe77301e))
+* add filament-ban-manager ([3791f3b](https://github.com/rectitude-open/filapress-core/commit/3791f3bd9e2e7e366fa929173476c3d9a39c2d1d))
+* add MailLog resource, policy, and configuration ([0b6c04d](https://github.com/rectitude-open/filapress-core/commit/0b6c04d0018ff974bb6bbd344149044da5ae2d4f))
+* update admin filament resource configuration ([d27d695](https://github.com/rectitude-open/filapress-core/commit/d27d695e6462d7b4386415b29c3c3cc9c04602c1))
+
 ## [1.1.0](https://github.com/rectitude-open/filapress-core/compare/v1.0.0...v1.1.0) (2025-05-14)
 
 
