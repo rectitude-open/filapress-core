@@ -20,11 +20,13 @@ use RectitudeOpen\FilamentNews\Models\News;
 use RectitudeOpen\FilaPressCore\Filament\Pages\Auth\Login;
 use RectitudeOpen\FilaPressCore\Filament\Resources\AdminResource;
 use RectitudeOpen\FilaPressCore\Models\Admin;
+use RectitudeOpen\FilaPressCore\Policies\ActivityPolicy;
 use RectitudeOpen\FilaPressCore\Policies\AdminPolicy;
 use RectitudeOpen\FilaPressCore\Policies\BanPolicy;
 use RectitudeOpen\FilaPressCore\Policies\MailLogPolicy;
 use RectitudeOpen\FilaPressCore\Policies\NewsPolicy;
 use RectitudeOpen\FilaPressCore\Policies\RolePolicy;
+use Spatie\Activitylog\Models\Activity;
 use Spatie\Permission\Models\Role;
 use Tapp\FilamentMailLog\FilamentMailLogPlugin;
 use Tapp\FilamentMailLog\Models\MailLog;
@@ -50,6 +52,7 @@ class FilaPressCorePlugin implements Plugin
             ->resources([
                 config('filapress-core.admin_filament_resource', AdminResource::class),
                 \RectitudeOpen\FilaPressCore\Filament\Resources\MailLogResource::class,
+                config('filament-logger.activity_resource'),
             ])
             ->plugins([
                 FilamentShieldPlugin::make(),
@@ -85,6 +88,7 @@ class FilaPressCorePlugin implements Plugin
         Gate::policy(News::class, NewsPolicy::class);
         Gate::policy(Ban::class, BanPolicy::class);
         Gate::policy(MailLog::class, MailLogPolicy::class);
+        Gate::policy(Activity::class, ActivityPolicy::class);
     }
 
     public static function make(): static

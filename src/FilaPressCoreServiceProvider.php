@@ -26,6 +26,7 @@ class FilaPressCoreServiceProvider extends PackageServiceProvider
                 'filament-users',
                 'filament-news',
                 'filament-ban-manager',
+                'filament-logger',
             ])
             ->hasMigrations([]);
         // ->hasViews()
