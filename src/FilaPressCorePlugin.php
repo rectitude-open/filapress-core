@@ -17,7 +17,11 @@ use RectitudeOpen\FilamentNews\FilamentNewsPlugin;
 use RectitudeOpen\FilamentNews\Models\News;
 use RectitudeOpen\FilaPressCore\Filament\Pages\Auth\Login;
 use RectitudeOpen\FilaPressCore\Filament\Resources\AdminResource;
+use RectitudeOpen\FilaPressCore\Models\Admin;
+use RectitudeOpen\FilaPressCore\Policies\AdminPolicy;
 use RectitudeOpen\FilaPressCore\Policies\NewsPolicy;
+use RectitudeOpen\FilaPressCore\Policies\RolePolicy;
+use Spatie\Permission\Models\Role;
 use TomatoPHP\FilamentUsers\FilamentUsersPlugin;
 
 class FilaPressCorePlugin implements Plugin
@@ -67,6 +71,8 @@ class FilaPressCorePlugin implements Plugin
 
         Notifications::alignment(Alignment::Center);
 
+        Gate::policy(Admin::class, AdminPolicy::class);
+        Gate::policy(Role::class, RolePolicy::class);
         Gate::policy(News::class, NewsPolicy::class);
     }
 
