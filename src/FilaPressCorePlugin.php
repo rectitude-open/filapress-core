@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
 use RectitudeOpen\FilamentBanManager\FilamentBanManagerPlugin;
 use RectitudeOpen\FilamentBanManager\Models\Ban;
+use RectitudeOpen\FilamentInfoPages\FilamentInfoPagesPlugin;
+use RectitudeOpen\FilamentInfoPages\Models\Page;
 use RectitudeOpen\FilamentNews\FilamentNewsPlugin;
 use RectitudeOpen\FilamentNews\Models\News;
 use RectitudeOpen\FilaPressCore\Filament\Pages\Auth\Login;
@@ -25,6 +27,7 @@ use RectitudeOpen\FilaPressCore\Policies\AdminPolicy;
 use RectitudeOpen\FilaPressCore\Policies\BanPolicy;
 use RectitudeOpen\FilaPressCore\Policies\MailLogPolicy;
 use RectitudeOpen\FilaPressCore\Policies\NewsPolicy;
+use RectitudeOpen\FilaPressCore\Policies\PagePolicy;
 use RectitudeOpen\FilaPressCore\Policies\RolePolicy;
 use Spatie\Activitylog\Models\Activity;
 use Spatie\Permission\Models\Role;
@@ -60,6 +63,7 @@ class FilaPressCorePlugin implements Plugin
                 FilamentNewsPlugin::make(),
                 FilamentBanManagerPlugin::make(),
                 FilamentMailLogPlugin::make(),
+                FilamentInfoPagesPlugin::make(),
             ])
             ->authGuard('admin');
     }
@@ -89,6 +93,7 @@ class FilaPressCorePlugin implements Plugin
         Gate::policy(Ban::class, BanPolicy::class);
         Gate::policy(MailLog::class, MailLogPolicy::class);
         Gate::policy(Activity::class, ActivityPolicy::class);
+        Gate::policy(Page::class, PagePolicy::class);
     }
 
     public static function make(): static
