@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace RectitudeOpen\FilaPressCore\Filament\Pages\Auth;
 
-use App\Settings\SystemSettings;
 use DanHarrin\LivewireRateLimiting\Exceptions\TooManyRequestsException;
 use Filament\Facades\Filament;
 use Filament\Forms\Form;
@@ -14,6 +13,7 @@ use Filament\Notifications\Notification;
 use Filament\Pages\Auth\Login as BaseLogin;
 use MarcoGermani87\FilamentCaptcha\Forms\Components\CaptchaField;
 use Mchev\Banhammer\IP;
+use RectitudeOpen\FilaPressCore\Settings\SystemSettings;
 use Spatie\Activitylog\ActivityLogger;
 use Spatie\Activitylog\ActivityLogStatus;
 use Spatie\Activitylog\Models\Activity;
@@ -78,7 +78,7 @@ class Login extends BaseLogin
     //         $this->throwFailureValidationException();
     //     }
 
-    //     /** @var ?\App\Models\Admin $user */
+    //     /** @var ?\RectitudeOpen\FilaPressCore\Models\Admin $user */
     //     $user = Filament::auth()->user();
 
     //     if (

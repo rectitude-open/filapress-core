@@ -6,6 +6,7 @@ use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
 use Filament\Contracts\Plugin;
 use Filament\FontProviders\LocalFontProvider;
 use Filament\Forms\Components\DateTimePicker;
+use Filament\Navigation\NavigationGroup;
 use Filament\Notifications\Livewire\Notifications;
 use Filament\Panel;
 use Filament\Support\Enums\Alignment;
@@ -19,6 +20,8 @@ use RectitudeOpen\FilamentInfoPages\FilamentInfoPagesPlugin;
 use RectitudeOpen\FilamentInfoPages\Models\Page;
 use RectitudeOpen\FilamentNews\FilamentNewsPlugin;
 use RectitudeOpen\FilamentNews\Models\News;
+use RectitudeOpen\FilamentSystemSettings\FilamentSystemSettingsPlugin;
+use RectitudeOpen\FilamentSystemSettings\Settings\SystemSettings;
 use RectitudeOpen\FilaPressCore\Filament\Pages\Auth\Login;
 use RectitudeOpen\FilaPressCore\Filament\Resources\AdminResource;
 use RectitudeOpen\FilaPressCore\Models\Admin;
@@ -45,6 +48,9 @@ class FilaPressCorePlugin implements Plugin
     public function register(Panel $panel): void
     {
         $panel
+            ->brandName(fn () => config('filament-system-settings.system_settings', SystemSettings::class)::getSiteName())
+            ->brandLogo(fn () => config('filament-system-settings.system_settings', SystemSettings::class)::getLogoUrl())
+            ->favicon(fn () => config('filament-system-settings.system_settings', SystemSettings::class)::getFaviconUrl())
             ->path('admin-'.config('filapress-core.admin_path', 'admin'))
             ->login(Login::class)
             ->font(
@@ -52,6 +58,16 @@ class FilaPressCorePlugin implements Plugin
                 url: asset('/admin-assets/'.config('filapress-core.admin_path', 'admin').'/css/fonts.css'),
                 provider: LocalFontProvider::class,
             )
+            ->navigationGroups([
+                NavigationGroup::make()
+                    ->label(__('menu.nav_group.content')),
+                NavigationGroup::make()
+                    ->label(__('menu.nav_group.security'))
+                    ->collapsed(),
+                NavigationGroup::make()
+                    ->label(__('menu.nav_group.settings'))
+                    ->collapsed(),
+            ])
             ->resources([
                 config('filapress-core.admin_filament_resource', AdminResource::class),
                 \RectitudeOpen\FilaPressCore\Filament\Resources\MailLogResource::class,
@@ -64,6 +80,7 @@ class FilaPressCorePlugin implements Plugin
                 FilamentBanManagerPlugin::make(),
                 FilamentMailLogPlugin::make(),
                 FilamentInfoPagesPlugin::make(),
+                FilamentSystemSettingsPlugin::make(),
             ])
             ->authGuard('admin');
     }
