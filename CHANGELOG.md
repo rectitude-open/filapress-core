@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.3.0](https://github.com/rectitude-open/filapress-core/compare/v1.2.0...v1.3.0) (2025-05-20)
+
+
+### Features
+
+* add activity logger feature ([6ebda75](https://github.com/rectitude-open/filapress-core/commit/6ebda75246fe10610d9422a39585b9402bc61fb5))
+* add contact logs management with policy implementation ([d3bc3c2](https://github.com/rectitude-open/filapress-core/commit/d3bc3c26a067d4399be2d6084a318ed630257d2d))
+* add pages feature ([769a39a](https://github.com/rectitude-open/filapress-core/commit/769a39a15d87e1274b5e91d600d7cd831f99a1b7))
+* add system settings feature ([716c72d](https://github.com/rectitude-open/filapress-core/commit/716c72d3a69a98a939fcd81b735158780e258fba))
+
 ## [1.2.0](https://github.com/rectitude-open/filapress-core/compare/v1.1.0...v1.2.0) (2025-05-15)
 
 
