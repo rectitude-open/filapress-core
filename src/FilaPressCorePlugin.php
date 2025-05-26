@@ -15,6 +15,7 @@ use Hasnayeen\Themes\ThemesPlugin;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
+use MarcoGermani87\FilamentCaptcha\FilamentCaptcha;
 use RectitudeOpen\FilamentBanManager\FilamentBanManagerPlugin;
 use RectitudeOpen\FilamentBanManager\Models\Ban;
 use RectitudeOpen\FilamentContactLogs\FilamentContactLogsPlugin;
@@ -82,6 +83,7 @@ class FilaPressCorePlugin implements Plugin
             ])
             ->plugins([
                 ThemesPlugin::make(),
+                FilamentCaptcha::make(),
                 FilamentShieldPlugin::make(),
                 FilamentUsersPlugin::make(),
                 FilamentNewsPlugin::make(),
