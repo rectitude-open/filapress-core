@@ -49,7 +49,7 @@ return [
         'color' => 'warning',
         'logger' => ModelLogger::class,
         'register' => [
-            // App\Models\Navigation::class,
+            RectitudeOpen\FilamentSiteNavigation\Models\SiteNavigation::class,
             RectitudeOpen\FilamentNews\Models\NewsCategory::class,
         ],
     ],
