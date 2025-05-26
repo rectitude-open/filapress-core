@@ -11,6 +11,7 @@ use Filament\Notifications\Livewire\Notifications;
 use Filament\Panel;
 use Filament\Support\Enums\Alignment;
 use Filament\Tables\Columns\TextColumn;
+use Hasnayeen\Themes\ThemesPlugin;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
@@ -80,6 +81,7 @@ class FilaPressCorePlugin implements Plugin
                 config('filament-logger.activity_resource'),
             ])
             ->plugins([
+                ThemesPlugin::make(),
                 FilamentShieldPlugin::make(),
                 FilamentUsersPlugin::make(),
                 FilamentNewsPlugin::make(),
