@@ -19,6 +19,7 @@ class BaseRevisionsPage extends RevisionsPage
     {
         return [
             Action::make('cancel')
+                ->color('gray')
                 ->label(__('filament-panels::resources/pages/edit-record.form.actions.cancel.label'))
                 ->alpineClickHandler('document.referrer ? window.history.back() : (window.location.href = '.Js::from($this->previousUrl ?? static::getResource()::getUrl()).')')
                 ->icon('heroicon-o-arrow-left')
