@@ -9,6 +9,7 @@ use Filament\Forms\Components\DateTimePicker;
 use Filament\Navigation\NavigationGroup;
 use Filament\Notifications\Livewire\Notifications;
 use Filament\Panel;
+use Filament\Support\Colors\Color;
 use Filament\Support\Enums\Alignment;
 use Filament\Tables\Columns\TextColumn;
 use Hasnayeen\Themes\ThemesPlugin;
@@ -16,6 +17,7 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
 use MarcoGermani87\FilamentCaptcha\FilamentCaptcha;
+use Mchev\Banhammer\Middleware\IPBanned;
 use RectitudeOpen\FilamentBanManager\FilamentBanManagerPlugin;
 use RectitudeOpen\FilamentBanManager\Models\Ban;
 use RectitudeOpen\FilamentContactLogs\FilamentContactLogsPlugin;
@@ -56,6 +58,10 @@ class FilaPressCorePlugin implements Plugin
     public function register(Panel $panel): void
     {
         $panel
+            ->colors([
+                'primary' => Color::Amber,
+            ])
+            ->authGuard('admin')
             ->brandName(fn () => config('filament-system-settings.system_settings', SystemSettings::class)::getSiteName())
             ->brandLogo(fn () => config('filament-system-settings.system_settings', SystemSettings::class)::getLogoUrl())
             ->favicon(fn () => config('filament-system-settings.system_settings', SystemSettings::class)::getFaviconUrl())
@@ -66,6 +72,9 @@ class FilaPressCorePlugin implements Plugin
                 url: asset('/admin-assets/'.config('filapress-core.admin_path', 'admin').'/css/fonts.css'),
                 provider: LocalFontProvider::class,
             )
+            ->middleware([
+                IPBanned::class,
+            ])
             ->navigationGroups([
                 NavigationGroup::make()
                     ->label(__('menu.nav_group.content')),
@@ -93,8 +102,7 @@ class FilaPressCorePlugin implements Plugin
                 FilamentSystemSettingsPlugin::make(),
                 FilamentContactLogsPlugin::make(),
                 FilamentSiteNavigationPlugin::make(),
-            ])
-            ->authGuard('admin');
+            ]);
     }
 
     public function boot(Panel $panel): void
