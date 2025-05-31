@@ -10,8 +10,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Rectitude Open",
-            "email": "open@rectitude.dev",
+            "name": "Aspirant Zhang",
+            "email": "admin@aspirantzhang.com",
             "role": "Developer"
         }
     ],
@@ -26,7 +26,7 @@
         "owen-it/laravel-auditing": "^14.0",
         "rectitude-open/filament-ban-manager": "^1.10",
         "rectitude-open/filament-contact-logs": "^1.3",
-        "rectitude-open/filament-info-pages": "v1.0.1",
+        "rectitude-open/filament-info-pages": "^1.1",
         "rectitude-open/filament-news": "^1.3",
         "rectitude-open/filament-site-navigation": "^1.0",
         "rectitude-open/filament-system-settings": "^1.0",

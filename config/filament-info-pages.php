@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 return [
-    'filament_resource' => RectitudeOpen\FilamentInfoPages\Resources\PageResource::class,
+    'filament_resource' => RectitudeOpen\FilaPressCore\Filament\Resources\PageResource::class,
     'model' => RectitudeOpen\FilamentInfoPages\Models\Page::class,
     'navigation_sort' => 0,
     'navigation_icon' => 'heroicon-o-document-text',
