@@ -47,6 +47,7 @@ use Spatie\Permission\Models\Role;
 use Tapp\FilamentMailLog\FilamentMailLogPlugin;
 use Tapp\FilamentMailLog\Models\MailLog;
 use TomatoPHP\FilamentUsers\FilamentUsersPlugin;
+use RectitudeOpen\FilamentSiteSnippets\FilamentSiteSnippetsPlugin;
 
 class FilaPressCorePlugin implements Plugin
 {
@@ -102,6 +103,7 @@ class FilaPressCorePlugin implements Plugin
                 FilamentSystemSettingsPlugin::make(),
                 FilamentContactLogsPlugin::make(),
                 FilamentSiteNavigationPlugin::make(),
+                FilamentSiteSnippetsPlugin::make(),
             ]);
     }
 
