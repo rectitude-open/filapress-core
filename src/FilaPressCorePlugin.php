@@ -28,26 +28,18 @@ use RectitudeOpen\FilamentNews\FilamentNewsPlugin;
 use RectitudeOpen\FilamentNews\Models\News;
 use RectitudeOpen\FilamentSiteNavigation\FilamentSiteNavigationPlugin;
 use RectitudeOpen\FilamentSiteNavigation\Models\SiteNavigation;
+use RectitudeOpen\FilamentSiteSnippets\FilamentSiteSnippetsPlugin;
+use RectitudeOpen\FilamentSiteSnippets\Models\SiteSnippet;
 use RectitudeOpen\FilamentSystemSettings\FilamentSystemSettingsPlugin;
 use RectitudeOpen\FilamentSystemSettings\Settings\SystemSettings;
 use RectitudeOpen\FilaPressCore\Filament\Pages\Auth\Login;
 use RectitudeOpen\FilaPressCore\Filament\Resources\AdminResource;
 use RectitudeOpen\FilaPressCore\Models\Admin;
-use RectitudeOpen\FilaPressCore\Policies\ActivityPolicy;
-use RectitudeOpen\FilaPressCore\Policies\AdminPolicy;
-use RectitudeOpen\FilaPressCore\Policies\BanPolicy;
-use RectitudeOpen\FilaPressCore\Policies\ContactLogPolicy;
-use RectitudeOpen\FilaPressCore\Policies\MailLogPolicy;
-use RectitudeOpen\FilaPressCore\Policies\NewsPolicy;
-use RectitudeOpen\FilaPressCore\Policies\PagePolicy;
-use RectitudeOpen\FilaPressCore\Policies\RolePolicy;
-use RectitudeOpen\FilaPressCore\Policies\SiteNavigationPolicy;
 use Spatie\Activitylog\Models\Activity;
 use Spatie\Permission\Models\Role;
 use Tapp\FilamentMailLog\FilamentMailLogPlugin;
 use Tapp\FilamentMailLog\Models\MailLog;
 use TomatoPHP\FilamentUsers\FilamentUsersPlugin;
-use RectitudeOpen\FilamentSiteSnippets\FilamentSiteSnippetsPlugin;
 
 class FilaPressCorePlugin implements Plugin
 {
@@ -126,15 +118,16 @@ class FilaPressCorePlugin implements Plugin
 
         Notifications::alignment(Alignment::Center);
 
-        Gate::policy(Admin::class, AdminPolicy::class);
-        Gate::policy(Role::class, RolePolicy::class);
-        Gate::policy(News::class, NewsPolicy::class);
-        Gate::policy(Ban::class, BanPolicy::class);
-        Gate::policy(MailLog::class, MailLogPolicy::class);
-        Gate::policy(Activity::class, ActivityPolicy::class);
-        Gate::policy(Page::class, PagePolicy::class);
-        Gate::policy(ContactLog::class, ContactLogPolicy::class);
-        Gate::policy(SiteNavigation::class, SiteNavigationPolicy::class);
+        Gate::policy(Admin::class, Policies\AdminPolicy::class);
+        Gate::policy(Role::class, Policies\RolePolicy::class);
+        Gate::policy(News::class, Policies\NewsPolicy::class);
+        Gate::policy(Ban::class, Policies\BanPolicy::class);
+        Gate::policy(MailLog::class, Policies\MailLogPolicy::class);
+        Gate::policy(Activity::class, Policies\ActivityPolicy::class);
+        Gate::policy(Page::class, Policies\PagePolicy::class);
+        Gate::policy(ContactLog::class, Policies\ContactLogPolicy::class);
+        Gate::policy(SiteNavigation::class, Policies\SiteNavigationPolicy::class);
+        Gate::policy(SiteSnippet::class, Policies\SiteSnippetPolicy::class);
     }
 
     public static function make(): static
