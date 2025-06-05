@@ -1,5 +1,30 @@
 # Changelog
 
+## [1.4.0](https://github.com/rectitude-open/filapress-core/compare/v1.3.0...v1.4.0) (2025-06-05)
+
+
+### Features
+
+* add captcha support to login process and implement related notifications ([54b10ad](https://github.com/rectitude-open/filapress-core/commit/54b10ad880db2dc1f894b5b34ac31d5c2284cb85))
+* add configs for built-in plugins ([1dcd9d2](https://github.com/rectitude-open/filapress-core/commit/1dcd9d2c213ab621381d12508ee25ea4daf07b4d))
+* add custom resource for info pages ([307ee66](https://github.com/rectitude-open/filapress-core/commit/307ee668537d03bb6749c6b93bb9efe15b9ea1d7))
+* add custom resource for news ([5ea541e](https://github.com/rectitude-open/filapress-core/commit/5ea541ed16bc8a815b274f6a623e2c0449db8264))
+* add export-ignore for filapress-core-docker and dev directories ([2b49ebc](https://github.com/rectitude-open/filapress-core/commit/2b49ebc9c16a449369f0f14487d6033797f54165))
+* add filament media manager ([6f326e1](https://github.com/rectitude-open/filapress-core/commit/6f326e1fbd8fd3fedac6e269add7f003ac6e924e))
+* add filament site snippet plugin ([5a5cf99](https://github.com/rectitude-open/filapress-core/commit/5a5cf99aea86f348e9154bfaa201ff923bb1ad89))
+* add more configs ([8790902](https://github.com/rectitude-open/filapress-core/commit/8790902a4e8e5cab836aeb41bbee92e7ade8b212))
+* add SetTheme middleware to FilaPressCorePlugin ([bb5a63a](https://github.com/rectitude-open/filapress-core/commit/bb5a63afb2d130ca9c2df59d9cbe4f8f3c7c1dfb))
+* add site navigation feature with policy implementation ([5606dfb](https://github.com/rectitude-open/filapress-core/commit/5606dfbdbddb15f56e4d0526403a6fd40af9cf1e))
+* add SiteSnippetPolicy for managing site snippet permissions ([83bbbf5](https://github.com/rectitude-open/filapress-core/commit/83bbbf5601d6d1a5af8c08fa3af9a52ef0db6222))
+* add strict types declaration across multiple files and introduce pint.json configuration ([5ddc5cb](https://github.com/rectitude-open/filapress-core/commit/5ddc5cb5572febea7b8abcae347d90565ac0ff7b))
+* add theme support ([9e14f0a](https://github.com/rectitude-open/filapress-core/commit/9e14f0a511bb1fc96d1fe3295b13d1fe18542742))
+* enhance FilaPressCorePlugin with color configuration and IP banning middleware ([e8e3c32](https://github.com/rectitude-open/filapress-core/commit/e8e3c32a4adc03d01019bb6fc741f92c84d46c9a))
+* integrate FilamentCaptcha plugin into FilaPressCorePlugin ([7c5e37a](https://github.com/rectitude-open/filapress-core/commit/7c5e37ad99488cc176669b148168ad80bde6a124))
+* update cancel action color in BaseRevisionsPage ([500f3e9](https://github.com/rectitude-open/filapress-core/commit/500f3e962af13331864fe14f483bec7186b41c85))
+* update filament news ([69bc236](https://github.com/rectitude-open/filapress-core/commit/69bc236299f5e8d62f20ad3f2bdb06cc066c3e8a))
+* update filament-contact-logs dependency to version 1.3 and add configuration file ([6ede543](https://github.com/rectitude-open/filapress-core/commit/6ede543c38e01d415b7596a196f0bafc43a3b8a7))
+* update README.md to enhance package description and remove unnecessary sections ([97e19d6](https://github.com/rectitude-open/filapress-core/commit/97e19d6dcbcf64791fe442901d68a96ae3eaa79c))
+
 ## [1.3.0](https://github.com/rectitude-open/filapress-core/compare/v1.2.0...v1.3.0) (2025-05-20)
 
 
