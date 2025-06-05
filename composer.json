@@ -1,10 +1,9 @@
 {
     "name": "rectitude-open/filapress-core",
-    "description": "This is my package filapress-core",
+    "description": "The core package for FilaPress.",
     "keywords": [
-        "RectitudeOpen",
         "laravel",
-        "filapress-core"
+        "filament-plugin"
     ],
     "homepage": "https://github.com/rectitude-open/filapress-core",
     "license": "MIT",
