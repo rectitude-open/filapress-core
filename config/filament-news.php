@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
     'news_model' => RectitudeOpen\FilamentNews\Models\News::class,
     'news_category_model' => RectitudeOpen\FilamentNews\Models\NewsCategory::class,
