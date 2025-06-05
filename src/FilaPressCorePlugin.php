@@ -12,6 +12,7 @@ use Filament\Panel;
 use Filament\Support\Colors\Color;
 use Filament\Support\Enums\Alignment;
 use Filament\Tables\Columns\TextColumn;
+use Hasnayeen\Themes\Http\Middleware\SetTheme;
 use Hasnayeen\Themes\ThemesPlugin;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
@@ -70,6 +71,7 @@ class FilaPressCorePlugin implements Plugin
             )
             ->middleware([
                 IPBanned::class,
+                SetTheme::class,
             ])
             ->navigationGroups([
                 NavigationGroup::make()
