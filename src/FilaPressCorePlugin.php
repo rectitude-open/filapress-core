@@ -39,6 +39,9 @@ use Spatie\Activitylog\Models\Activity;
 use Spatie\Permission\Models\Role;
 use Tapp\FilamentMailLog\FilamentMailLogPlugin;
 use Tapp\FilamentMailLog\Models\MailLog;
+use TomatoPHP\FilamentMediaManager\FilamentMediaManagerPlugin;
+use TomatoPHP\FilamentMediaManager\Models\Folder;
+use TomatoPHP\FilamentMediaManager\Models\Media;
 use TomatoPHP\FilamentUsers\FilamentUsersPlugin;
 
 class FilaPressCorePlugin implements Plugin
@@ -96,6 +99,7 @@ class FilaPressCorePlugin implements Plugin
                 FilamentContactLogsPlugin::make(),
                 FilamentSiteNavigationPlugin::make(),
                 FilamentSiteSnippetsPlugin::make(),
+                FilamentMediaManagerPlugin::make(),
             ]);
     }
 
@@ -128,6 +132,8 @@ class FilaPressCorePlugin implements Plugin
         Gate::policy(ContactLog::class, Policies\ContactLogPolicy::class);
         Gate::policy(SiteNavigation::class, Policies\SiteNavigationPolicy::class);
         Gate::policy(SiteSnippet::class, Policies\SiteSnippetPolicy::class);
+        Gate::policy(Folder::class, Policies\FolderPolicy::class);
+        Gate::policy(Media::class, Policies\MediaPolicy::class);
     }
 
     public static function make(): static
