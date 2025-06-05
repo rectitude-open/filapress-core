@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace RectitudeOpen\FilaPressCore;
 
 use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
