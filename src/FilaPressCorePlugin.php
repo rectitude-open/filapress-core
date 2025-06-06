@@ -16,6 +16,7 @@ use Filament\Support\Enums\Alignment;
 use Filament\Tables\Columns\TextColumn;
 use Hasnayeen\Themes\Http\Middleware\SetTheme;
 use Hasnayeen\Themes\ThemesPlugin;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
@@ -37,8 +38,12 @@ use RectitudeOpen\FilamentSystemSettings\FilamentSystemSettingsPlugin;
 use RectitudeOpen\FilamentSystemSettings\Settings\SystemSettings;
 use RectitudeOpen\FilaPressCore\Filament\Pages\Auth\Login;
 use RectitudeOpen\FilaPressCore\Filament\Resources\AdminResource;
+use RectitudeOpen\FilaPressCore\Listeners\LogSavingSettings;
+use RectitudeOpen\FilaPressCore\Listeners\LogSettingsSaved;
 use RectitudeOpen\FilaPressCore\Models\Admin;
 use Spatie\Activitylog\Models\Activity;
+use Spatie\LaravelSettings\Events\SavingSettings;
+use Spatie\LaravelSettings\Events\SettingsSaved;
 use Spatie\Permission\Models\Role;
 use Tapp\FilamentMailLog\FilamentMailLogPlugin;
 use Tapp\FilamentMailLog\Models\MailLog;
@@ -138,6 +143,9 @@ class FilaPressCorePlugin implements Plugin
         Gate::policy(SiteSnippet::class, Policies\SiteSnippetPolicy::class);
         Gate::policy(Folder::class, Policies\FolderPolicy::class);
         Gate::policy(Media::class, Policies\MediaPolicy::class);
+
+        Event::listen(SavingSettings::class, LogSavingSettings::class);
+        Event::listen(SettingsSaved::class, LogSettingsSaved::class);
     }
 
     public static function make(): static
