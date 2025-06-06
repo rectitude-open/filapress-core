@@ -74,7 +74,7 @@ abstract class BaseEditRecord extends EditRecord
     protected function getSubmitAction(): Actions\Action
     {
         return $this->getSubmitFormAction()
-            ->icon('heroicon-o-paper-airplane')
+            ->icon('heroicon-o-document-check')
             ->label(__('action.save'))
             ->formId('form');
     }

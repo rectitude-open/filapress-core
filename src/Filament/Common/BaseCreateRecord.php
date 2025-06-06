@@ -24,7 +24,7 @@ abstract class BaseCreateRecord extends CreateRecord
                 ->label(__('action.create_another'))
                 ->formId('form'),
             $this->getCreateFormAction()
-                ->icon('heroicon-o-paper-airplane')
+                ->icon('heroicon-o-document-check')
                 ->label(__('action.publish'))
                 ->formId('form'),
         ];
