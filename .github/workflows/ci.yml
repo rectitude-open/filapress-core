@@ -1,0 +1,68 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        operating-system: [ubuntu-latest]
+        php-versions: ["8.3", "8.4"]
+
+    name: PHP-${{ matrix.php-versions }} - ${{ matrix.operating-system}}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+          extensions: pdo, pdo_mysql, mbstring, xml, curl, zip, pcntl, bcmath, gd, intl, exif, xdebug
+          coverage: xdebug
+
+      - name: Check Version
+        run: |
+          php -v
+          php -m
+          composer -V
+          mysqld --version
+
+      - name: Get Composer Cache Directory
+        id: composer-cache
+        run: |
+          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache/Restore composer cache
+        uses: actions/cache@v4
+        id: actions-cache
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+
+      - name: Cache/Restore vendor folder
+        uses: actions/cache@v4
+        id: vendor-cache
+        with:
+          path: vendor
+          key: ${{ runner.OS }}-build-${{ hashFiles('**/composer.lock') }}
+
+      - name: Install Dependencies
+        if: steps.vendor-cache.outputs.cache-hit != 'true'
+        run: composer install
+
+      - name: Run Pint Test
+        run: ./vendor/bin/phpstan
+
+      - name: Static analysis
+        run: ./vendor/bin/phpstan analyse
+
+      - name: Run tests
+        run: ./vendor/bin/pest --ci
+
+      - name: Dependencies security check
+        uses: symfonycorp/security-checker-action@v5
