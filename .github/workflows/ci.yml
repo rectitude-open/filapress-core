@@ -56,7 +56,7 @@ jobs:
         run: composer install
 
       - name: Run Pint Test
-        run: ./vendor/bin/phpstan
+        run: ./vendor/bin/pint --test
 
       - name: Static analysis
         run: ./vendor/bin/phpstan analyse
