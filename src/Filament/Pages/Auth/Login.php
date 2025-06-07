@@ -24,10 +24,12 @@ class Login extends BaseLogin
     {
         parent::mount();
 
-        $this->form->fill([
-            'email' => 'superadmin@test.com',
-            'password' => 'superadmin',
-        ]);
+        if (app()->environment(['local', 'testing', 'core-testing'])) {
+            $this->form->fill([
+                'email' => 'superadmin@test.com',
+                'password' => 'superadmin',
+            ]);
+        }
     }
 
     public function authenticate(): ?LoginResponse
