@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 use RectitudeOpen\FilaPressCore\Tests\TestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 uses(TestCase::class)->in(__DIR__);
 
-pest()->extend(TestCase::class)
-    ->use(Illuminate\Foundation\Testing\RefreshDatabase::class)
+uses(TestCase::class, RefreshDatabase::class)
     ->in('Feature');
