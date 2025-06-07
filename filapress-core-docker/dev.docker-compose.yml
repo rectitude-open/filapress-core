@@ -4,6 +4,7 @@ services:
     image: filapress-core-nginx
     volumes:
       - ../:/home/wwwroot/filapress-core
+      - /home/wwwroot/filapress:/home/wwwroot/filapress
       - ./php/nginx-site.conf:/etc/nginx/conf.d/default.conf
       - ./php/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf
       - ./php/custom_php.ini:/usr/local/etc/php/conf.d/custom_php.ini
@@ -24,6 +25,27 @@ services:
     networks:
       filapress-core-net:
         ipv4_address: 172.16.125.11
+
+  filapress-core-testing-mysql:
+    container_name: filapress-core-testing-mysql
+    image: mysql:8.4
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+      TZ: "Etc/UTC"
+    ports:
+      - 31254:3306
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 1000M
+    networks:
+      filapress-core-net:
+        ipv4_address: 172.16.125.14
 
 networks:
   filapress-core-net:
