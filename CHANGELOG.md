@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.0](https://github.com/rectitude-open/filapress-core/compare/v1.4.0...v1.5.0) (2025-06-07)
+
+
+### Features
+
+* add event listeners for saving and saved settings ([2851bca](https://github.com/rectitude-open/filapress-core/commit/2851bca80b5d666d3053d02c4dbc4a401a86d486))
+* update action icons for create and submit in BaseCreateRecord and BaseEditRecord ([3524c10](https://github.com/rectitude-open/filapress-core/commit/3524c1010c2d726d5cf6c91281c6206c8bcebe51))
+
 ## [1.4.0](https://github.com/rectitude-open/filapress-core/compare/v1.3.0...v1.4.0) (2025-06-05)
 
 
