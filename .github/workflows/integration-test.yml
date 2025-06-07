@@ -89,4 +89,4 @@ jobs:
 
       - name: Run Tests on FilaPress app
         working-directory: ./filapress-app
-        run: ./vendor/bin/pest ./filapress-core/tests/Feature
+        run: ./vendor/bin/pest ../filapress-core/tests/Feature
