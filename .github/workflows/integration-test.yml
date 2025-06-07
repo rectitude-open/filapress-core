@@ -1,0 +1,92 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  integration-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        operating-system: [ubuntu-latest]
+        php-versions: ["8.3"]
+
+    name: PHP-${{ matrix.php-versions }} - ${{ matrix.operating-system}}
+
+    services:
+      mysql:
+        image: mysql:latest
+        env:
+          MYSQL_DATABASE: test
+          MYSQL_ROOT_PASSWORD: root
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    steps:
+      - name: Checkout filapress-core (this repository)
+        uses: actions/checkout@v4
+        with:
+          path: filapress-core
+
+      - name: Checkout FilaPress application
+        uses: actions/checkout@v4
+        with:
+          repository: rectitude-open/filapress
+          path: filapress-app
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+          extensions: pdo, pdo_mysql, mbstring, xml, curl, zip, pcntl, bcmath, gd, intl, exif, xdebug
+          coverage: xdebug
+
+      - name: Check Version
+        run: |
+          php -v
+          php -m
+          composer -V
+          mysqld --version
+
+      - name: Get Composer Cache Directory for FilaPress app
+        id: composer-cache-app
+        working-directory: ./filapress-app
+        run: |
+          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache Composer dependencies for FilaPress app
+        uses: actions/cache@v4
+        with:
+          path: ./filapress-app/${{ steps.composer-cache-app.outputs.dir }}
+          key: ${{ runner.os }}-composer-app-${{ hashFiles('**/filapress-app/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-app-
+
+      - name: Cache Vendor folder for FilaPress app
+        uses: actions/cache@v4
+        with:
+          path: ./filapress-app/vendor
+          key: ${{ runner.OS }}-vendor-app-${{ hashFiles('**/filapress-app/composer.lock') }}
+
+      - name: Configure FilaPress app to use local filapress-core
+        working-directory: ./filapress-app
+        run: |
+          php -r '$composerJsonPath = "composer.json"; $composerConfig = json_decode(file_get_contents($composerJsonPath), true); $composerConfig["repositories"] = [["type" => "path", "url" => "../filapress-core", "options" => ["symlink" => false]]]; $composerConfig["require"]["rectitude-open/filapress-core"] = "@dev"; file_put_contents($composerJsonPath, json_encode($composerConfig, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));'
+          echo "Updated filapress-app/composer.json to use local filapress-core:"
+          cat composer.json
+
+      - name: Set up .env file for FilaPress app
+        working-directory: ./filapress-app
+        run: sed -i 's/DB_HOST=filapress-testing-mysql/DB_HOST=127.0.0.1/g' .env.testing
+
+      - name: Install FilaPress App Dependencies (forcing local core)
+        working-directory: ./filapress-app
+        run: composer update rectitude-open/filapress-core --with-all-dependencies
+
+      - name: Import database for FilaPress app
+        working-directory: ./filapress-app
+        run: php artisan migrate --seed --force
+
+      - name: Run Tests on FilaPress app
+        working-directory: ./filapress-app
+        run: ./vendor/bin/pest --ci
