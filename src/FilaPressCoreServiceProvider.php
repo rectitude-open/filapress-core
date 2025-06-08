@@ -21,6 +21,14 @@ class FilaPressCoreServiceProvider extends PackageServiceProvider
         }
     }
 
+    public function boot()
+    {
+        parent::boot();
+
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../database/settings');
+    }
+
     public static function getCoreConfigsToLoad(): array
     {
         $configs = [];

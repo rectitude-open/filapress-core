@@ -29,7 +29,6 @@ services:
   filapress-core-testing-mysql:
     container_name: filapress-core-testing-mysql
     image: mysql:8.4
-    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: test
