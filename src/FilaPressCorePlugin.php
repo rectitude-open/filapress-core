@@ -92,7 +92,6 @@ class FilaPressCorePlugin implements Plugin
             ])
             ->resources([
                 config('filapress-core.admin_filament_resource', AdminResource::class),
-                \RectitudeOpen\FilaPressCore\Filament\Resources\MailLogResource::class,
                 config('filament-logger.activity_resource'),
             ])
             ->plugins([
@@ -100,16 +99,42 @@ class FilaPressCorePlugin implements Plugin
                 FilamentCaptcha::make(),
                 FilamentShieldPlugin::make(),
                 FilamentUsersPlugin::make(),
-                FilamentNewsPlugin::make(),
                 FilamentBanManagerPlugin::make(),
-                FilamentMailLogPlugin::make(),
-                FilamentInfoPagesPlugin::make(),
                 FilamentSystemSettingsPlugin::make(),
-                FilamentContactLogsPlugin::make(),
-                FilamentSiteNavigationPlugin::make(),
-                FilamentSiteSnippetsPlugin::make(),
                 FilamentMediaManagerPlugin::make(),
             ]);
+
+        $this->registerPlugins($panel);
+    }
+
+    public function registerPlugins(Panel $panel): void
+    {
+        if (config('filapress-core.plugins.FilamentNewsPlugin', true)) {
+            $panel->plugins([FilamentNewsPlugin::make()]);
+        }
+
+        if (config('filapress-core.plugins.FilamentMailLogPlugin', true)) {
+            $panel->plugins([FilamentMailLogPlugin::make()])
+                ->resources([
+                    \RectitudeOpen\FilaPressCore\Filament\Resources\MailLogResource::class,
+                ]);
+        }
+
+        if (config('filapress-core.plugins.FilamentInfoPagesPlugin', true)) {
+            $panel->plugins([FilamentInfoPagesPlugin::make()]);
+        }
+
+        if (config('filapress-core.plugins.FilamentContactLogsPlugin', true)) {
+            $panel->plugins([FilamentContactLogsPlugin::make()]);
+        }
+
+        if (config('filapress-core.plugins.FilamentSiteSnippetsPlugin', true)) {
+            $panel->plugins([FilamentSiteSnippetsPlugin::make()]);
+        }
+
+        if (config('filapress-core.plugins.FilamentSiteNavigationPlugin', true)) {
+            $panel->plugins([FilamentSiteNavigationPlugin::make()]);
+        }
     }
 
     public function boot(Panel $panel): void
