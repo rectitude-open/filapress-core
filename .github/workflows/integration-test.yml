@@ -65,7 +65,7 @@ jobs:
 
       - name: Install FilaPress App Dependencies (forcing local core)
         working-directory: ./filapress-app
-        run: composer update rectitude-open/filapress-core --with-all-dependencies
+        run: composer update --with-all-dependencies
 
       - name: Import database for FilaPress app
         working-directory: ./filapress-app
