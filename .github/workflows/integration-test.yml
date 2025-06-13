@@ -48,6 +48,26 @@ jobs:
           composer -V
           mysqld --version
 
+      - name: Get Composer Cache Directory for FilaPress app
+        id: composer-cache-app
+        working-directory: ./filapress-app
+        run: |
+          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache Composer dependencies for FilaPress app
+        uses: actions/cache@v4
+        with:
+          path: ./filapress-app/${{ steps.composer-cache-app.outputs.dir }}
+          key: ${{ runner.os }}-composer-app-${{ hashFiles('**/filapress-app/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-app-
+
+      - name: Cache Vendor folder for FilaPress app
+        uses: actions/cache@v4
+        with:
+          path: ./filapress-app/vendor
+          key: ${{ runner.OS }}-vendor-app-${{ hashFiles('**/filapress-app/composer.lock') }}
+
       - name: Configure FilaPress app to use local filapress-core
         working-directory: ./filapress-app
         run: |
@@ -58,10 +78,6 @@ jobs:
       - name: Set up .env file for FilaPress app
         working-directory: ./filapress-app
         run: sed -i 's/DB_HOST=filapress-testing-mysql/DB_HOST=127.0.0.1/g' .env.testing
-
-      - name: Remove composer.lock from FilaPress app
-        working-directory: ./filapress-app
-        run: rm -f composer.lock
 
       - name: Install FilaPress App Dependencies (forcing local core)
         working-directory: ./filapress-app
