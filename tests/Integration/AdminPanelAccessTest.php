@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 use Livewire\Livewire;
 use RectitudeOpen\FilaPressCore\Filament\Pages\Auth\Login;
 use RectitudeOpen\FilaPressCore\Models\Admin;
