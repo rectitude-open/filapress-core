@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace RectitudeOpen\FilaPressCore;
 
+use Awcodes\Curator\CuratorPlugin;
+use Awcodes\Curator\Models\Media;
 use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
 use Filament\Contracts\Plugin;
 use Filament\FontProviders\LocalFontProvider;
@@ -11,6 +13,8 @@ use Filament\Forms\Components\DateTimePicker;
 use Filament\Navigation\NavigationGroup;
 use Filament\Notifications\Livewire\Notifications;
 use Filament\Panel;
+use Filament\Support\Assets\Css;
+use Filament\Support\Assets\Js;
 use Filament\Support\Colors\Color;
 use Filament\Support\Enums\Alignment;
 use Filament\Tables\Columns\TextColumn;
@@ -47,9 +51,6 @@ use Spatie\LaravelSettings\Events\SettingsSaved;
 use Spatie\Permission\Models\Role;
 use Tapp\FilamentMailLog\FilamentMailLogPlugin;
 use Tapp\FilamentMailLog\Models\MailLog;
-use TomatoPHP\FilamentMediaManager\FilamentMediaManagerPlugin;
-use TomatoPHP\FilamentMediaManager\Models\Folder;
-use TomatoPHP\FilamentMediaManager\Models\Media;
 use TomatoPHP\FilamentUsers\FilamentUsersPlugin;
 
 class FilaPressCorePlugin implements Plugin
@@ -101,7 +102,23 @@ class FilaPressCorePlugin implements Plugin
                 FilamentUsersPlugin::make(),
                 FilamentBanManagerPlugin::make(),
                 FilamentSystemSettingsPlugin::make(),
-                FilamentMediaManagerPlugin::make(),
+                CuratorPlugin::make()
+                    ->label('Media')
+                    ->navigationIcon('heroicon-o-photo')
+                    ->navigationGroup('Content')
+                    ->navigationSort(100)
+                    ->registerNavigation(true)
+                    ->defaultListView('list'),
+            ])
+            ->assets([
+                Css::make(
+                    'curator-css',
+                    asset('admin-assets/'.config('filapress-core.admin_path', 'admin').'/css/awcodes/curator/curator.css')
+                ),
+                Js::make(
+                    'curator-js',
+                    asset('admin-assets/'.config('filapress-core.admin_path', 'admin').'/js/awcodes/curator/components/curation.js')
+                ),
             ]);
 
         $this->registerPlugins($panel);
@@ -166,7 +183,6 @@ class FilaPressCorePlugin implements Plugin
         Gate::policy(ContactLog::class, Policies\ContactLogPolicy::class);
         Gate::policy(SiteNavigation::class, Policies\SiteNavigationPolicy::class);
         Gate::policy(SiteSnippet::class, Policies\SiteSnippetPolicy::class);
-        Gate::policy(Folder::class, Policies\FolderPolicy::class);
         Gate::policy(Media::class, Policies\MediaPolicy::class);
 
         Event::listen(SavingSettings::class, LogSavingSettings::class);

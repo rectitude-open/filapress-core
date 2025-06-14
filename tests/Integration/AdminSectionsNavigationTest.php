@@ -27,7 +27,7 @@ it('can see core navigations in the admin panel', function () {
     $this->response->assertSee('Dashboard');
     $this->response->assertSee('News');
     $this->response->assertSee('Site Navigation');
-    $this->response->assertSee('Media Manager');
+    $this->response->assertSee('Media');
     $this->response->assertSee('Pages');
     $this->response->assertSee('Contact Logs');
     $this->response->assertSee('Site Snippets');

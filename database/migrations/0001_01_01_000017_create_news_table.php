@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('weight')->default(0);
             $table->unsignedTinyInteger('status')->default(1)->comment('1=active, 0=suspended');
             $table->unsignedBigInteger('author_id')->default(0);
+            $table->unsignedBigInteger('featured_image_id')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
