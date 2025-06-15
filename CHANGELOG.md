@@ -1,5 +1,40 @@
 # Changelog
 
+## [1.6.0](https://github.com/rectitude-open/filapress-core/compare/v1.5.0...v1.6.0) (2025-06-15)
+
+
+### Features
+
+* add admin panel accessibility test and update test execution command ([f7a85c8](https://github.com/rectitude-open/filapress-core/commit/f7a85c8b458e56b7898524d1d46fff9fe0073ac5))
+* add CI workflow for PHP setup, dependency management, and testing ([bdd7c8c](https://github.com/rectitude-open/filapress-core/commit/bdd7c8ca2b9fa316bed0c065d9f645c7fa13f971))
+* add GitHub Actions workflow for release automation ([94556e9](https://github.com/rectitude-open/filapress-core/commit/94556e9b5a347f0eb77db7b588481b67d7bbb237))
+* add integration test for admin panel accessibility and update docker-compose for testing environment ([dcff860](https://github.com/rectitude-open/filapress-core/commit/dcff860a9d7ae83f1b03d22c18c5751980cc3b49))
+* add integration test workflow and remove obsolete workflows ([41861ee](https://github.com/rectitude-open/filapress-core/commit/41861eefdfe514ca7feaf8301cde24eff008294b))
+* add migrations for built-in plugins ([22ada1e](https://github.com/rectitude-open/filapress-core/commit/22ada1e2be19f4f273bfe4e8caaa42cd242dc62a))
+* enhance admin panel tests with login validation and accessibility checks ([012cf2b](https://github.com/rectitude-open/filapress-core/commit/012cf2bdeae55ccbe3370924e00edf19fca655b6))
+* implement dynamic plugin registration based on configuration ([41e2d55](https://github.com/rectitude-open/filapress-core/commit/41e2d551707297e04d253cec04a804698e93870f))
+* update dependencies ([0807594](https://github.com/rectitude-open/filapress-core/commit/0807594871a09e6d375c04231f378a46e08ce781))
+* update filament-news version and configs ([4dcf73b](https://github.com/rectitude-open/filapress-core/commit/4dcf73be4e75fb908690c48e2c5390eedd855536))
+* use Curator instead of Media Manager ([4173436](https://github.com/rectitude-open/filapress-core/commit/41734365422e712099cbc2b30f0b7b8025e7bc52))
+
+
+### Bug Fixes
+
+* conditionally fill login form with credentials in local and testing environments ([52a3b8d](https://github.com/rectitude-open/filapress-core/commit/52a3b8d5a22556d9eed068d918325cde6b7ca401))
+* correct casing in runner.os for vendor cache key in CI workflow ([ed65688](https://github.com/rectitude-open/filapress-core/commit/ed656880ea58f644eb1d746ff5ef7cecee5f150d))
+* correct command for Pint test execution in CI workflow ([ba6e933](https://github.com/rectitude-open/filapress-core/commit/ba6e9335163d38a40612c73efe977b3d6ed0d752))
+* rename workflow from CI to Integration Test for clarity ([6c607b2](https://github.com/rectitude-open/filapress-core/commit/6c607b25f99487a9c29c1ad1f33b0d0a8dffdb9a))
+* update composer command to install dependencies without specifying the core package ([2a1ded3](https://github.com/rectitude-open/filapress-core/commit/2a1ded307d221560a9c431a67886ad59e9770ae9))
+* update test command path in integration test workflow ([87cf470](https://github.com/rectitude-open/filapress-core/commit/87cf4708b69a3c4ff04c94ecc874d465b1fe49da))
+* update test path in integration workflow to run integration tests ([c39857e](https://github.com/rectitude-open/filapress-core/commit/c39857ee5383eb552d7d47abb22cee7b19af51ff))
+
+
+### Miscellaneous Chores
+
+* **deps:** bump rectitude-open/filament-news from 1.5.0 to 1.7.0 ([fe1e3b9](https://github.com/rectitude-open/filapress-core/commit/fe1e3b95ac1c3d82f337ae451d86c2d2142ed7ca))
+* **deps:** bump rectitude-open/filament-news from 1.5.0 to 1.7.0 ([42c2cd7](https://github.com/rectitude-open/filapress-core/commit/42c2cd7f91b65846290766312d35a8a5f74a9639))
+* update README to remove installation and usage sections, and adjust credits ([08b8580](https://github.com/rectitude-open/filapress-core/commit/08b858039b018578aba04154481b08a6a1499db3))
+
 ## [1.5.0](https://github.com/rectitude-open/filapress-core/compare/v1.4.0...v1.5.0) (2025-06-07)
 
 
