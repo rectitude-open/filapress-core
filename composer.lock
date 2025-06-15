@@ -6479,16 +6479,16 @@
         },
         {
             "name": "rectitude-open/filament-info-pages",
-            "version": "v1.4.0",
+            "version": "v1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectitude-open/filament-info-pages.git",
-                "reference": "2d7b6519f6eff43f6fbfb4f554296420657a3906"
+                "reference": "32b79501957a1ab2b917286a1b1d59a5e9635385"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectitude-open/filament-info-pages/zipball/2d7b6519f6eff43f6fbfb4f554296420657a3906",
-                "reference": "2d7b6519f6eff43f6fbfb4f554296420657a3906",
+                "url": "https://api.github.com/repos/rectitude-open/filament-info-pages/zipball/32b79501957a1ab2b917286a1b1d59a5e9635385",
+                "reference": "32b79501957a1ab2b917286a1b1d59a5e9635385",
                 "shasum": ""
             },
             "require": {
@@ -6553,20 +6553,20 @@
                 "issues": "https://github.com/rectitude-open/filament-info-pages/issues",
                 "source": "https://github.com/rectitude-open/filament-info-pages"
             },
-            "time": "2025-06-14T12:22:14+00:00"
+            "time": "2025-06-15T06:17:41+00:00"
         },
         {
             "name": "rectitude-open/filament-news",
-            "version": "v1.12.3",
+            "version": "v1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectitude-open/filament-news.git",
-                "reference": "f39354a2a0f0d74646fda420466d42d128f5e8a4"
+                "reference": "606b4d6557adf4d37a9ddea6cf25538ed5b68232"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectitude-open/filament-news/zipball/f39354a2a0f0d74646fda420466d42d128f5e8a4",
-                "reference": "f39354a2a0f0d74646fda420466d42d128f5e8a4",
+                "url": "https://api.github.com/repos/rectitude-open/filament-news/zipball/606b4d6557adf4d37a9ddea6cf25538ed5b68232",
+                "reference": "606b4d6557adf4d37a9ddea6cf25538ed5b68232",
                 "shasum": ""
             },
             "require": {
@@ -6633,7 +6633,7 @@
                 "issues": "https://github.com/rectitude-open/filament-news/issues",
                 "source": "https://github.com/rectitude-open/filament-news"
             },
-            "time": "2025-06-14T13:46:40+00:00"
+            "time": "2025-06-15T06:17:22+00:00"
         },
         {
             "name": "rectitude-open/filament-site-navigation",
