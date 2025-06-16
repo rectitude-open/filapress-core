@@ -9,12 +9,17 @@ use RectitudeOpen\FilaPressCore\Models\Admin;
 
 class PagePolicy
 {
+    public function before(Admin $admin, string $ability): ?bool
+    {
+        return $admin->hasRole('super-admin') ? true : null;
+    }
+
     /**
      * Determine whether the user can view any models.
      */
     public function viewAny(Admin $admin): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('view_any_page');
+        return $admin->can('view_any_page');
     }
 
     /**
@@ -22,7 +27,7 @@ class PagePolicy
      */
     public function view(Admin $admin, Page $page): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('view_page');
+        return $admin->can('view_page');
     }
 
     /**
@@ -30,7 +35,7 @@ class PagePolicy
      */
     public function create(Admin $admin): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('create_page');
+        return $admin->can('create_page');
     }
 
     /**
@@ -38,7 +43,7 @@ class PagePolicy
      */
     public function update(Admin $admin, Page $page): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('update_page');
+        return $admin->can('update_page');
     }
 
     /**
@@ -46,7 +51,7 @@ class PagePolicy
      */
     public function delete(Admin $admin, Page $page): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('delete_page');
+        return $admin->can('delete_page');
     }
 
     /**
@@ -54,7 +59,7 @@ class PagePolicy
      */
     public function restore(Admin $admin, Page $page): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('restore_page');
+        return $admin->can('restore_page');
     }
 
     /**
@@ -62,6 +67,6 @@ class PagePolicy
      */
     public function forceDelete(Admin $admin, Page $page): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('force_delete_page');
+        return $admin->can('force_delete_page');
     }
 }

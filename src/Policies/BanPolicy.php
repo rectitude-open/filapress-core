@@ -9,12 +9,17 @@ use RectitudeOpen\FilaPressCore\Models\Admin;
 
 class BanPolicy
 {
+    public function before(Admin $admin, string $ability): ?bool
+    {
+        return $admin->hasRole('super-admin') ? true : null;
+    }
+
     /**
      * Determine whether the user can view any models.
      */
     public function viewAny(Admin $admin): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('view_any_ban');
+        return $admin->can('view_any_ban');
     }
 
     /**
@@ -22,7 +27,7 @@ class BanPolicy
      */
     public function view(Admin $admin, Ban $ban): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('view_ban');
+        return $admin->can('view_ban');
     }
 
     /**
@@ -30,7 +35,7 @@ class BanPolicy
      */
     public function create(Admin $admin): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('create_ban');
+        return $admin->can('create_ban');
     }
 
     /**
@@ -38,7 +43,7 @@ class BanPolicy
      */
     public function update(Admin $admin, Ban $ban): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('update_ban');
+        return $admin->can('update_ban');
     }
 
     /**
@@ -46,7 +51,7 @@ class BanPolicy
      */
     public function delete(Admin $admin, Ban $ban): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('delete_ban');
+        return $admin->can('delete_ban');
     }
 
     /**
@@ -54,7 +59,7 @@ class BanPolicy
      */
     public function restore(Admin $admin, Ban $ban): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('restore_ban');
+        return $admin->can('restore_ban');
     }
 
     /**
@@ -62,6 +67,6 @@ class BanPolicy
      */
     public function forceDelete(Admin $admin, Ban $ban): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('force_delete_ban');
+        return $admin->can('force_delete_ban');
     }
 }

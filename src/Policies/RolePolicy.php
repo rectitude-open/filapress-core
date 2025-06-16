@@ -9,12 +9,17 @@ use Spatie\Permission\Models\Role;
 
 class RolePolicy
 {
+    public function before(Admin $admin, string $ability): ?bool
+    {
+        return $admin->hasRole('super-admin') ? true : null;
+    }
+
     /**
      * Determine whether the user can view any models.
      */
     public function viewAny(Admin $admin): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('view_any_role');
+        return $admin->can('view_any_role');
     }
 
     /**
@@ -22,7 +27,7 @@ class RolePolicy
      */
     public function view(Admin $admin, Role $role): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('view_role');
+        return $admin->can('view_role');
     }
 
     /**
@@ -30,7 +35,7 @@ class RolePolicy
      */
     public function create(Admin $admin): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('create_role');
+        return $admin->can('create_role');
     }
 
     /**
@@ -38,7 +43,7 @@ class RolePolicy
      */
     public function update(Admin $admin, Role $role): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('update_role');
+        return $admin->can('update_role');
     }
 
     /**
@@ -46,7 +51,7 @@ class RolePolicy
      */
     public function delete(Admin $admin, Role $role): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('delete_role');
+        return $admin->can('delete_role');
     }
 
     /**
@@ -54,7 +59,7 @@ class RolePolicy
      */
     public function restore(Admin $admin, Role $role): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('restore_role');
+        return $admin->can('restore_role');
     }
 
     /**
@@ -62,6 +67,6 @@ class RolePolicy
      */
     public function forceDelete(Admin $admin, Role $role): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('force_delete_role');
+        return $admin->can('force_delete_role');
     }
 }

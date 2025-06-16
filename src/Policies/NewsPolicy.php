@@ -9,12 +9,17 @@ use RectitudeOpen\FilaPressCore\Models\Admin;
 
 class NewsPolicy
 {
+    public function before(Admin $admin, string $ability): ?bool
+    {
+        return $admin->hasRole('super-admin') ? true : null;
+    }
+
     /**
      * Determine whether the user can view any models.
      */
     public function viewAny(Admin $admin): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('view_any_news');
+        return $admin->can('view_any_news');
     }
 
     /**
@@ -22,7 +27,7 @@ class NewsPolicy
      */
     public function view(Admin $admin, News $news): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('view_news');
+        return $admin->can('view_news');
     }
 
     /**
@@ -30,7 +35,7 @@ class NewsPolicy
      */
     public function create(Admin $admin): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('create_news');
+        return $admin->can('create_news');
     }
 
     /**
@@ -38,7 +43,7 @@ class NewsPolicy
      */
     public function update(Admin $admin, News $news): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('update_news');
+        return $admin->can('update_news');
     }
 
     /**
@@ -46,7 +51,7 @@ class NewsPolicy
      */
     public function delete(Admin $admin, News $news): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('delete_news');
+        return $admin->can('delete_news');
     }
 
     /**
@@ -54,7 +59,7 @@ class NewsPolicy
      */
     public function restore(Admin $admin, News $news): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('restore_news');
+        return $admin->can('restore_news');
     }
 
     /**
@@ -62,6 +67,6 @@ class NewsPolicy
      */
     public function forceDelete(Admin $admin, News $news): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('force_delete_news');
+        return $admin->can('force_delete_news');
     }
 }

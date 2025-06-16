@@ -9,12 +9,17 @@ use RectitudeOpen\FilaPressCore\Models\Admin;
 
 class ContactLogPolicy
 {
+    public function before(Admin $admin, string $ability): ?bool
+    {
+        return $admin->hasRole('super-admin') ? true : null;
+    }
+
     /**
      * Determine whether the user can view any models.
      */
     public function viewAny(Admin $admin): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('view_any_contact::log');
+        return $admin->can('view_any_contact::log');
     }
 
     /**
@@ -22,7 +27,7 @@ class ContactLogPolicy
      */
     public function view(Admin $admin, ContactLog $contactLog): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('view_contact::log');
+        return $admin->can('view_contact::log');
     }
 
     /**
@@ -30,7 +35,7 @@ class ContactLogPolicy
      */
     public function create(Admin $admin): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('create_contact::log');
+        return $admin->can('create_contact::log');
     }
 
     /**
@@ -38,7 +43,7 @@ class ContactLogPolicy
      */
     public function update(Admin $admin, ContactLog $contactLog): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('update_contact::log');
+        return $admin->can('update_contact::log');
     }
 
     /**
@@ -46,7 +51,7 @@ class ContactLogPolicy
      */
     public function delete(Admin $admin, ContactLog $contactLog): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('delete_contact::log');
+        return $admin->can('delete_contact::log');
     }
 
     /**
@@ -54,7 +59,7 @@ class ContactLogPolicy
      */
     public function restore(Admin $admin, ContactLog $contactLog): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('restore_contact::log');
+        return $admin->can('restore_contact::log');
     }
 
     /**
@@ -62,6 +67,6 @@ class ContactLogPolicy
      */
     public function forceDelete(Admin $admin, ContactLog $contactLog): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('force_delete_contact::log');
+        return $admin->can('force_delete_contact::log');
     }
 }

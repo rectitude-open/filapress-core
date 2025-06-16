@@ -9,12 +9,17 @@ use Spatie\Activitylog\Models\Activity;
 
 class ActivityPolicy
 {
+    public function before(Admin $admin, string $ability): ?bool
+    {
+        return $admin->hasRole('super-admin') ? true : null;
+    }
+
     /**
      * Determine whether the user can view any models.
      */
     public function viewAny(Admin $admin): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('view_any_activity');
+        return $admin->can('view_any_activity');
     }
 
     /**
@@ -22,7 +27,7 @@ class ActivityPolicy
      */
     public function view(Admin $admin, Activity $activity): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('view_activity');
+        return $admin->can('view_activity');
     }
 
     /**
@@ -30,7 +35,7 @@ class ActivityPolicy
      */
     public function create(Admin $admin): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('create_activity');
+        return $admin->can('create_activity');
     }
 
     /**
@@ -38,7 +43,7 @@ class ActivityPolicy
      */
     public function update(Admin $admin, Activity $activity): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('update_activity');
+        return $admin->can('update_activity');
     }
 
     /**
@@ -46,7 +51,7 @@ class ActivityPolicy
      */
     public function delete(Admin $admin, Activity $activity): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('delete_activity');
+        return $admin->can('delete_activity');
     }
 
     /**
@@ -54,7 +59,7 @@ class ActivityPolicy
      */
     public function restore(Admin $admin, Activity $activity): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('restore_activity');
+        return $admin->can('restore_activity');
     }
 
     /**
@@ -62,6 +67,6 @@ class ActivityPolicy
      */
     public function forceDelete(Admin $admin, Activity $activity): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('force_delete_activity');
+        return $admin->can('force_delete_activity');
     }
 }

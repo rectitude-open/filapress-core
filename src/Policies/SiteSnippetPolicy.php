@@ -9,12 +9,17 @@ use RectitudeOpen\FilaPressCore\Models\Admin;
 
 class SiteSnippetPolicy
 {
+    public function before(Admin $admin, string $ability): ?bool
+    {
+        return $admin->hasRole('super-admin') ? true : null;
+    }
+
     /**
      * Determine whether the user can view any models.
      */
     public function viewAny(Admin $admin): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('view_any_site::snippet');
+        return $admin->can('view_any_site::snippet');
     }
 
     /**
@@ -22,7 +27,7 @@ class SiteSnippetPolicy
      */
     public function view(Admin $admin, SiteSnippet $siteNavigation): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('view_site::snippet');
+        return $admin->can('view_site::snippet');
     }
 
     /**
@@ -30,7 +35,7 @@ class SiteSnippetPolicy
      */
     public function create(Admin $admin): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('create_site::snippet');
+        return $admin->can('create_site::snippet');
     }
 
     /**
@@ -38,7 +43,7 @@ class SiteSnippetPolicy
      */
     public function update(Admin $admin, SiteSnippet $siteNavigation): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('update_site::snippet');
+        return $admin->can('update_site::snippet');
     }
 
     /**
@@ -46,7 +51,7 @@ class SiteSnippetPolicy
      */
     public function delete(Admin $admin, SiteSnippet $siteNavigation): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('delete_site::snippet');
+        return $admin->can('delete_site::snippet');
     }
 
     /**
@@ -54,7 +59,7 @@ class SiteSnippetPolicy
      */
     public function restore(Admin $admin, SiteSnippet $siteNavigation): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('restore_site::snippet');
+        return $admin->can('restore_site::snippet');
     }
 
     /**
@@ -62,6 +67,6 @@ class SiteSnippetPolicy
      */
     public function forceDelete(Admin $admin, SiteSnippet $siteNavigation): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('force_delete_site::snippet');
+        return $admin->can('force_delete_site::snippet');
     }
 }

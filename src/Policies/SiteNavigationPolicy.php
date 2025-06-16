@@ -9,12 +9,17 @@ use RectitudeOpen\FilaPressCore\Models\Admin;
 
 class SiteNavigationPolicy
 {
+    public function before(Admin $admin, string $ability): ?bool
+    {
+        return $admin->hasRole('super-admin') ? true : null;
+    }
+
     /**
      * Determine whether the user can view any models.
      */
     public function viewAny(Admin $admin): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('view_any_site::navigation');
+        return $admin->can('view_any_site::navigation');
     }
 
     /**
@@ -22,7 +27,7 @@ class SiteNavigationPolicy
      */
     public function view(Admin $admin, SiteNavigation $siteNavigation): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('view_site::navigation');
+        return $admin->can('view_site::navigation');
     }
 
     /**
@@ -30,7 +35,7 @@ class SiteNavigationPolicy
      */
     public function create(Admin $admin): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('create_site::navigation');
+        return $admin->can('create_site::navigation');
     }
 
     /**
@@ -38,7 +43,7 @@ class SiteNavigationPolicy
      */
     public function update(Admin $admin, SiteNavigation $siteNavigation): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('update_site::navigation');
+        return $admin->can('update_site::navigation');
     }
 
     /**
@@ -46,7 +51,7 @@ class SiteNavigationPolicy
      */
     public function delete(Admin $admin, SiteNavigation $siteNavigation): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('delete_site::navigation');
+        return $admin->can('delete_site::navigation');
     }
 
     /**
@@ -54,7 +59,7 @@ class SiteNavigationPolicy
      */
     public function restore(Admin $admin, SiteNavigation $siteNavigation): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('restore_site::navigation');
+        return $admin->can('restore_site::navigation');
     }
 
     /**
@@ -62,6 +67,6 @@ class SiteNavigationPolicy
      */
     public function forceDelete(Admin $admin, SiteNavigation $siteNavigation): bool
     {
-        return $admin->hasRole('super-admin') || $admin->can('force_delete_site::navigation');
+        return $admin->can('force_delete_site::navigation');
     }
 }
