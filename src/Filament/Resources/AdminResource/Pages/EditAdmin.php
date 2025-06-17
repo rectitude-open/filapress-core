@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace RectitudeOpen\FilaPressCore\Filament\Resources\AdminResource\Pages;
 
 use Filament\Actions\DeleteAction;
-use Filament\Resources\Pages\EditRecord;
+use RectitudeOpen\FilaPressCore\Filament\Common\BaseEditRecord;
 use RectitudeOpen\FilaPressCore\Filament\Resources\AdminResource;
 use RectitudeOpen\FilaPressCore\Models\Admin;
 
-class EditAdmin extends EditRecord
+class EditAdmin extends BaseEditRecord
 {
     protected static string $resource = AdminResource::class;
 

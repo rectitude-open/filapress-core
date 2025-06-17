@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace RectitudeOpen\FilaPressCore\Filament\Resources\AdminResource\Pages;
 
-use Filament\Resources\Pages\CreateRecord;
+use RectitudeOpen\FilaPressCore\Filament\Common\BaseCreateRecord;
 use RectitudeOpen\FilaPressCore\Filament\Resources\AdminResource;
 
-class CreateAdmin extends CreateRecord
+class CreateAdmin extends BaseCreateRecord
 {
     protected static string $resource = AdminResource::class;
 }
