@@ -27,7 +27,7 @@ return [
     'profiles' => [
         'default' => [
             'plugins' => 'accordion autoresize codesample directionality advlist link image lists preview pagebreak searchreplace wordcount code fullscreen insertdatetime media table emoticons paste_from_word',
-            'toolbar' => 'code | undo redo removeformat | styles | bold italic | alignjustify alignleft aligncenter alignright | numlist bullist outdent indent | forecolor backcolor | blockquote table toc hr | image link media codesample emoticons | wordcount fullscreen | rtl ltr',
+            'toolbar' => 'code undo redo removeformat | styles | bold italic | image link | alignjustify alignleft aligncenter alignright | numlist bullist | forecolor backcolor |  outdent indent | blockquote table toc hr | media codesample emoticons | wordcount fullscreen | rtl ltr',
             'upload_directory' => null,
         ],
 
