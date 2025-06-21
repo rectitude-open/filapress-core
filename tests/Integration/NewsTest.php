@@ -1,7 +1,9 @@
 <?php
 
 declare(strict_types=1);
+
 use Filament\Tables\Actions\DeleteBulkAction;
+use Illuminate\Database\Eloquent\Factories\Sequence;
 use Livewire\Livewire;
 use RectitudeOpen\FilamentNews\Models\News;
 use RectitudeOpen\FilamentNews\Models\NewsCategory;
@@ -42,6 +44,11 @@ test('ensure news tags is accessible', function () {
     $response->assertStatus(200);
     $response->assertSee('No tags');
 });
+
+it('has a field on create form', function (string $field) {
+    Livewire::test(CreateNews::class)
+        ->assertFormFieldExists($field);
+})->with(['title', 'content', 'categories', 'tags', 'slug', 'summary', 'weight', 'status', 'created_at', 'seo.title', 'seo.author', 'seo.description', 'seo.robots']);
 
 test('can create a news item', function () {
     $newsCategory = NewsCategory::factory()->create();
@@ -99,10 +106,22 @@ test('can delete a news item', function () {
 });
 
 test('can list news items', function () {
-    $news1 = News::factory()->create(['title' => 'News 1']);
-    $news2 = News::factory()->create(['title' => 'News 2']);
-
+    $records = News::factory(3)->create();
     Livewire::test(ListNews::class)
-        ->assertSee($news1->title)
-        ->assertSee($news2->title);
+        ->assertCanSeeTableRecords($records);
+});
+
+test('can list news with pagination', function () {
+    $records = News::factory(20)
+        ->state(new Sequence(
+            fn (Sequence $sequence) => ['created_at' => now()->subDays($sequence->index)],
+        ))
+        ->create();
+
+    $sortedRecords = $records->sortByDesc('created_at');
+
+    $this->assertDatabaseCount('news', 20);
+    Livewire::test(ListNews::class)
+        ->call('gotoPage', 2)
+        ->assertCanSeeTableRecords($sortedRecords->skip(10));
 });
