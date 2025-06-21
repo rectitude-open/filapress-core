@@ -1,10 +1,11 @@
 <?php
 
 declare(strict_types=1);
+
 use RectitudeOpen\FilaPressCore\Models\Admin;
 use Spatie\Permission\Models\Role;
 
-beforeEach(function () {
+it('can see navigations in the admin panel if the user is a super admin', function (string $nav) {
     Role::create([
         'name' => 'super-admin',
         'guard_name' => 'admin',
@@ -16,29 +17,29 @@ beforeEach(function () {
     ]);
     $superAdmin->assignRole('super-admin');
 
-    $this->response = $this->actingAs($superAdmin, 'admin')->get('/admin-admin');
-});
+    $response = $this->actingAs($superAdmin, 'admin')->get('/admin-admin');
 
-it('can see core navigations in the admin panel', function () {
+    $response->assertStatus(200);
 
-    $this->response->assertStatus(200);
+    $response->assertSee($nav);
+})->with(['Content', 'Dashboard', 'News', 'Site Navigation', 'Media', 'Pages', 'Contact Logs', 'Site Snippets', 'Security', 'Roles', 'Bans', 'Admins', 'Mail Log', 'Activity Log', 'Settings', 'System']);
 
-    $this->response->assertSee('Content');
-    $this->response->assertSee('Dashboard');
-    $this->response->assertSee('News');
-    $this->response->assertSee('Site Navigation');
-    $this->response->assertSee('Media');
-    $this->response->assertSee('Pages');
-    $this->response->assertSee('Contact Logs');
-    $this->response->assertSee('Site Snippets');
+it('cannot see navigations in the admin panel if the user is not a super admin', function (string $nav) {
+    Role::create([
+        'name' => 'webmaster',
+        'guard_name' => 'admin',
+    ]);
+    $webmaster = Admin::create([
+        'name' => 'User',
+        'email' => 'webmaster@test.com',
+        'password' => bcrypt('webmaster'),
+    ]);
 
-    $this->response->assertSee('Security');
-    $this->response->assertSee('Roles');
-    $this->response->assertSee('Bans');
-    $this->response->assertSee('Admins');
-    $this->response->assertSee('Mail Log');
-    $this->response->assertSee('Activity Log');
+    $webmaster->assignRole('webmaster');
+    $response = $this->actingAs($webmaster, 'admin')->get('/admin-admin');
 
-    $this->response->assertSee('Settings');
-    $this->response->assertSee('System');
-});
+    $response->assertStatus(200);
+
+    $response->assertDontSee($nav);
+
+})->with(['News', 'Site Navigation', 'Pages', 'Contact Logs', 'Site Snippets', 'Security', 'Roles', 'Bans', 'Admins', 'Mail Log', 'Activity Log', 'Settings', 'System']);
