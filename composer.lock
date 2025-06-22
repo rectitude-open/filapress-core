@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "26461a0ce74d025ba75b029b2e13bb69",
+    "content-hash": "48fe683ad5be9d4f9cac9b91eae14a63",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -6479,16 +6479,16 @@
         },
         {
             "name": "rectitude-open/filament-info-pages",
-            "version": "v1.6.0",
+            "version": "v1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectitude-open/filament-info-pages.git",
-                "reference": "09357b190f7cc4fcb45179ec9a0fd6b00b733a07"
+                "reference": "5c6ff5c657fb75d139e6b65700cd3c1133d06e59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectitude-open/filament-info-pages/zipball/09357b190f7cc4fcb45179ec9a0fd6b00b733a07",
-                "reference": "09357b190f7cc4fcb45179ec9a0fd6b00b733a07",
+                "url": "https://api.github.com/repos/rectitude-open/filament-info-pages/zipball/5c6ff5c657fb75d139e6b65700cd3c1133d06e59",
+                "reference": "5c6ff5c657fb75d139e6b65700cd3c1133d06e59",
                 "shasum": ""
             },
             "require": {
@@ -6552,7 +6552,7 @@
                 "issues": "https://github.com/rectitude-open/filament-info-pages/issues",
                 "source": "https://github.com/rectitude-open/filament-info-pages"
             },
-            "time": "2025-06-19T13:56:00+00:00"
+            "time": "2025-06-21T11:00:58+00:00"
         },
         {
             "name": "rectitude-open/filament-news",
@@ -6781,16 +6781,16 @@
         },
         {
             "name": "rectitude-open/filament-system-settings",
-            "version": "v1.0.1",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectitude-open/filament-system-settings.git",
-                "reference": "6ca08a38da74ffc46f6a761bd002cb1ead9fa9b6"
+                "reference": "c3f8ffb8719de3ceb225adeba8e1d7d37c169b03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectitude-open/filament-system-settings/zipball/6ca08a38da74ffc46f6a761bd002cb1ead9fa9b6",
-                "reference": "6ca08a38da74ffc46f6a761bd002cb1ead9fa9b6",
+                "url": "https://api.github.com/repos/rectitude-open/filament-system-settings/zipball/c3f8ffb8719de3ceb225adeba8e1d7d37c169b03",
+                "reference": "c3f8ffb8719de3ceb225adeba8e1d7d37c169b03",
                 "shasum": ""
             },
             "require": {
@@ -6850,7 +6850,7 @@
                 "issues": "https://github.com/rectitude-open/filament-system-settings/issues",
                 "source": "https://github.com/rectitude-open/filament-system-settings"
             },
-            "time": "2025-05-18T05:40:11+00:00"
+            "time": "2025-06-22T07:32:22+00:00"
         },
         {
             "name": "rectitude-open/filament-tinyeditor-6",
