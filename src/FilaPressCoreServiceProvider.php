@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace RectitudeOpen\FilaPressCore;
 
+use Filament\Support\Facades\FilamentView;
+use Filament\View\PanelsRenderHook;
 use Illuminate\Support\Str;
 use RectitudeOpen\FilaPressCore\Commands\FilaPressCoreCommand;
 use Spatie\LaravelPackageTools\Package;
@@ -27,6 +29,11 @@ class FilaPressCoreServiceProvider extends PackageServiceProvider
 
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadMigrationsFrom(__DIR__.'/../database/settings');
+
+        FilamentView::registerRenderHook(
+            PanelsRenderHook::GLOBAL_SEARCH_AFTER,
+            fn () => view('filapress-core::components.admin.view-site-button'),
+        );
     }
 
     public static function getCoreConfigsToLoad(): array
@@ -84,9 +91,10 @@ class FilaPressCoreServiceProvider extends PackageServiceProvider
                 'tags',
                 'themes',
                 'versionable',
-            ]);
+            ])
+            ->hasViews();
         // ->hasMigrations([]);
-        // ->hasViews()
+
         // ->hasMigration('create_filapress_core_table')
         // ->hasCommand(FilaPressCoreCommand::class);
     }
