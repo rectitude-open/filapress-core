@@ -29,6 +29,7 @@ FilaPress stands on the shoulders of giants. We express our sincere gratitude to
 | Filament Captcha                | [Marco Germani](https://github.com/marcogermani87)   | MIT     | [Documentation](https://github.com/marcogermani87/filament-captcha)            |
 | Filament Laravel Auditing       | [Tapp Network](https://github.com/TappNetwork)       | MIT     | [Documentation](https://github.com/TappNetwork/filament-auditing)              |
 | Mail Log                        | [Tapp Network](https://github.com/TappNetwork)       | MIT     | [Documentation](https://github.com/TappNetwork/filament-maillog)               |
+| HTMLPurifier for Laravel        | [MeWebStudio](https://github.com/mewebstudio)        | MIT     | [Documentation](https://github.com/mewebstudio/purifier)                       |
 | Filament News                   | [Rectitude Open](https://github.com/rectitude-open)  | MIT     | [Documentation](https://github.com/rectitude-open/filament-news)               |
 | Filament Site Snippets          | [Rectitude Open](https://github.com/rectitude-open)  | MIT     | [Documentation](https://github.com/rectitude-open/filament-site-snippets)      |
 | Filament Info Pages             | [Rectitude Open](https://github.com/rectitude-open)  | MIT     | [Documentation](https://github.com/rectitude-open/filament-info-pages)         |
