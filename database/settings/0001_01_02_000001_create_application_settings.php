@@ -10,7 +10,6 @@ return new class extends SettingsMigration
     {
         $this->migrator->add('system.site_name', 'FilaPress');
         $this->migrator->add('system.site_title', '');
-        $this->migrator->add('system.site_url', '');
         $this->migrator->add('system.site_description', '');
         $this->migrator->add('system.site_logo', '');
         $this->migrator->add('system.site_favicon', '');

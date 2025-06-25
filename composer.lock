@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "48fe683ad5be9d4f9cac9b91eae14a63",
+    "content-hash": "2a21c3792e666ebae287ce535744693d",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -6479,16 +6479,16 @@
         },
         {
             "name": "rectitude-open/filament-info-pages",
-            "version": "v1.7.0",
+            "version": "v1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectitude-open/filament-info-pages.git",
-                "reference": "5c6ff5c657fb75d139e6b65700cd3c1133d06e59"
+                "reference": "c4248e5574f01a894db534c03853fa5dd1b2cacb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectitude-open/filament-info-pages/zipball/5c6ff5c657fb75d139e6b65700cd3c1133d06e59",
-                "reference": "5c6ff5c657fb75d139e6b65700cd3c1133d06e59",
+                "url": "https://api.github.com/repos/rectitude-open/filament-info-pages/zipball/c4248e5574f01a894db534c03853fa5dd1b2cacb",
+                "reference": "c4248e5574f01a894db534c03853fa5dd1b2cacb",
                 "shasum": ""
             },
             "require": {
@@ -6502,16 +6502,13 @@
                 "spatie/laravel-package-tools": "^1.15.0"
             },
             "require-dev": {
-                "larastan/larastan": "^2.0",
+                "larastan/larastan": "^2.11",
                 "laravel/pint": "^1.0",
                 "nunomaduro/collision": "^7.9",
                 "orchestra/testbench": "^8.0",
                 "pestphp/pest": "^2.1",
                 "pestphp/pest-plugin-arch": "^2.0",
-                "pestphp/pest-plugin-laravel": "^2.0",
-                "phpstan/extension-installer": "^1.1",
-                "phpstan/phpstan-deprecation-rules": "^1.0",
-                "phpstan/phpstan-phpunit": "^1.0"
+                "pestphp/pest-plugin-laravel": "^2.0"
             },
             "type": "library",
             "extra": {
@@ -6552,7 +6549,7 @@
                 "issues": "https://github.com/rectitude-open/filament-info-pages/issues",
                 "source": "https://github.com/rectitude-open/filament-info-pages"
             },
-            "time": "2025-06-21T11:00:58+00:00"
+            "time": "2025-06-24T14:20:02+00:00"
         },
         {
             "name": "rectitude-open/filament-news",
@@ -6781,16 +6778,16 @@
         },
         {
             "name": "rectitude-open/filament-system-settings",
-            "version": "v1.1.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectitude-open/filament-system-settings.git",
-                "reference": "c3f8ffb8719de3ceb225adeba8e1d7d37c169b03"
+                "reference": "2057e4894db7af14a5ed794b5fb53ebbb4023a1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectitude-open/filament-system-settings/zipball/c3f8ffb8719de3ceb225adeba8e1d7d37c169b03",
-                "reference": "c3f8ffb8719de3ceb225adeba8e1d7d37c169b03",
+                "url": "https://api.github.com/repos/rectitude-open/filament-system-settings/zipball/2057e4894db7af14a5ed794b5fb53ebbb4023a1b",
+                "reference": "2057e4894db7af14a5ed794b5fb53ebbb4023a1b",
                 "shasum": ""
             },
             "require": {
@@ -6850,7 +6847,7 @@
                 "issues": "https://github.com/rectitude-open/filament-system-settings/issues",
                 "source": "https://github.com/rectitude-open/filament-system-settings"
             },
-            "time": "2025-06-22T07:32:22+00:00"
+            "time": "2025-06-24T13:01:59+00:00"
         },
         {
             "name": "rectitude-open/filament-tinyeditor-6",
@@ -14809,12 +14806,12 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.2"
     },
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
 }
