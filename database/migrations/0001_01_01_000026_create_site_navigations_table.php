@@ -17,12 +17,16 @@ return new class extends Migration
             $table->increments('id');
 
             $table->string('title')->default('');
-            $table->string('url')->default('');
+            $table->string('path');
+            $table->string('controller_action')->nullable();
+            $table->json('route_parameters')->nullable();
+            $table->string('child_route_pattern')->nullable();
+            $table->string('child_controller_action')->nullable();
+
             $table->tinyInteger('is_active')->default(1)->comment('0: inactive, 1: active');
 
             $table->integer('parent_id')->default(-1);
             $table->integer('weight')->default(0);
-            $table->softDeletes();
 
             $table->index('parent_id');
             $table->index('weight');
