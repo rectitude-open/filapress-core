@@ -1,5 +1,36 @@
 # Changelog
 
+## [1.7.0](https://github.com/rectitude-open/filapress-core/compare/v1.6.0...v1.7.0) (2025-06-26)
+
+
+### Features
+
+* add HTMLPurifier for Laravel and article setting ([4036f3b](https://github.com/rectitude-open/filapress-core/commit/4036f3babd70ba433783623bdebaeec69db9914d))
+* add PHPStan ignore directive for view-site-button render hook ([342a55b](https://github.com/rectitude-open/filapress-core/commit/342a55b9db9a722773d6a3efab1bd09dbf61dd7c))
+* add RichEditor component class to site snippets configuration ([485535b](https://github.com/rectitude-open/filapress-core/commit/485535baaab813dcfb62accbb7223b97f856de1d))
+* add site URL setting to application settings migration ([39e0336](https://github.com/rectitude-open/filapress-core/commit/39e0336bb313599327734fbde9e5f9b0a4908c00))
+* add view site button component and register render hook in service provider ([317324a](https://github.com/rectitude-open/filapress-core/commit/317324af38bc5be87c0de3443c03182225045b6e))
+* enhance news tests with form field checks and pagination support ([160eddd](https://github.com/rectitude-open/filapress-core/commit/160eddd676d92801b0140a877d08caded4c0f88a))
+* update dependencies ([3929a99](https://github.com/rectitude-open/filapress-core/commit/3929a994e964ebddaae9883887091ba071e1ad58))
+* Update dependencies and PHPStan configuration ([c3649a3](https://github.com/rectitude-open/filapress-core/commit/c3649a3e47a94898e7f06423486a60dbc8a02b1c))
+* update info pages config and dependencies ([03d1a18](https://github.com/rectitude-open/filapress-core/commit/03d1a18e9ecbd3772ca28c043039cea1e3144c3a))
+* update rectitude-open/filament-site-navigation version to ^1.1 in composer files ([ce6ed63](https://github.com/rectitude-open/filapress-core/commit/ce6ed6345dfff5a4612c3c185943f9b4ae27ead6))
+* update site navigations migration to include additional fields and remove soft deletes ([7e73de3](https://github.com/rectitude-open/filapress-core/commit/7e73de3e8151b9781a24abb04630a9913251c3b2))
+* update site snippets version ([8424425](https://github.com/rectitude-open/filapress-core/commit/84244252a43bec9811a4bcf3fa354563ec9714d4))
+* update system settings version and enhance system settings configuration ([0149cd9](https://github.com/rectitude-open/filapress-core/commit/0149cd903c63e2593f193c572c9c3cfcea8dc006))
+
+
+### Bug Fixes
+
+* adjust toolbar formatting in default profile for clarity ([9e4558d](https://github.com/rectitude-open/filapress-core/commit/9e4558d70409e2b16daacb66be27697021e4720e))
+* enhance integration script to support test filtering ([8e2d415](https://github.com/rectitude-open/filapress-core/commit/8e2d415a9d3501eeaae795549098f668ca98d18f))
+
+
+### Miscellaneous Chores
+
+* **deps:** bump rectitude-open/filament-site-snippets ([1e8c30d](https://github.com/rectitude-open/filapress-core/commit/1e8c30dc23550a53b2e29af414902466bd53d323))
+* **deps:** bump rectitude-open/filament-site-snippets from 1.3.0 to 1.4.0 ([4e6619f](https://github.com/rectitude-open/filapress-core/commit/4e6619fc2023348c7d7ea73a5fcc08270bb2d901))
+
 ## [1.6.0](https://github.com/rectitude-open/filapress-core/compare/v1.5.0...v1.6.0) (2025-06-15)
 
 
