@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "13873c0dc350e452320ccf729a6f73b2",
+    "content-hash": "912a323971eeb151a6074840f18d3cdf",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -6841,7 +6841,7 @@
         },
         {
             "name": "rectitude-open/filament-site-navigation",
-            "version": "dev-main",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectitude-open/filament-site-navigation.git",
@@ -6873,7 +6873,6 @@
                 "phpstan/phpstan-deprecation-rules": "^1.0",
                 "phpstan/phpstan-phpunit": "^1.0"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -14868,9 +14867,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "rectitude-open/filament-site-navigation": 20
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
