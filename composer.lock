@@ -1817,7 +1817,7 @@
         },
         {
             "name": "filament/spatie-laravel-tags-plugin",
-            "version": "v3.3.28",
+            "version": "v3.3.29",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/spatie-laravel-tags-plugin.git",
@@ -6761,16 +6761,16 @@
         },
         {
             "name": "rectitude-open/filament-news",
-            "version": "v1.13.1",
+            "version": "v1.14.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectitude-open/filament-news.git",
-                "reference": "d19d6879fc1558bafe7a670f20712ce92b394f4f"
+                "reference": "d32d0a52ad2c2c3e913059b8704b365bb95a513f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectitude-open/filament-news/zipball/d19d6879fc1558bafe7a670f20712ce92b394f4f",
-                "reference": "d19d6879fc1558bafe7a670f20712ce92b394f4f",
+                "url": "https://api.github.com/repos/rectitude-open/filament-news/zipball/d32d0a52ad2c2c3e913059b8704b365bb95a513f",
+                "reference": "d32d0a52ad2c2c3e913059b8704b365bb95a513f",
                 "shasum": ""
             },
             "require": {
@@ -6837,7 +6837,7 @@
                 "issues": "https://github.com/rectitude-open/filament-news/issues",
                 "source": "https://github.com/rectitude-open/filament-news"
             },
-            "time": "2025-06-19T13:56:18+00:00"
+            "time": "2025-06-27T07:51:38+00:00"
         },
         {
             "name": "rectitude-open/filament-site-navigation",
