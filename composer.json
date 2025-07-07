@@ -36,7 +36,7 @@
         "solution-forest/filament-tree": "^2.1",
         "spatie/laravel-package-tools": "^1.16",
         "tapp/filament-auditing": "^3.1",
-        "tapp/filament-maillog": "^1.0",
+        "tapp/filament-maillog": "^2.0",
         "tomatophp/filament-users": "^2.0",
         "z3d0x/filament-logger": "^0.8.0"
     },
