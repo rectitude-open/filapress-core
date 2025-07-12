@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.7.1](https://github.com/rectitude-open/filapress-core/compare/v1.7.0...v1.7.1) (2025-07-12)
+
+
+### Miscellaneous Chores
+
+* **deps-dev:** bump laravel/pint from 1.22.1 to 1.23.0 ([0445e0c](https://github.com/rectitude-open/filapress-core/commit/0445e0c76f53c26f82171e678ca0c6c68d532e18))
+* **deps-dev:** bump laravel/pint from 1.22.1 to 1.23.0 ([58091d6](https://github.com/rectitude-open/filapress-core/commit/58091d6df92d571d4bb620d267e9c8088d9dae61))
+* **deps:** bump rectitude-open/filament-info-pages from 1.8.0 to 1.9.0 ([774edb7](https://github.com/rectitude-open/filapress-core/commit/774edb757a9989917648fc178fcbb196d63a20d7))
+* **deps:** bump rectitude-open/filament-info-pages from 1.8.0 to 1.9.0 ([dab83af](https://github.com/rectitude-open/filapress-core/commit/dab83afb89aeafa0687fdab3f5980c52436874ba))
+* **deps:** bump rectitude-open/filament-info-pages from 1.9.0 to 1.9.1 ([b5694d1](https://github.com/rectitude-open/filapress-core/commit/b5694d19f908e67ae1a777a118a6f5b4bb1104aa))
+* **deps:** bump rectitude-open/filament-info-pages from 1.9.0 to 1.9.1 ([c213114](https://github.com/rectitude-open/filapress-core/commit/c213114277b24e77f6ef9ae44e3d153911096610))
+* **deps:** bump rectitude-open/filament-news from 1.13.1 to 1.14.2 ([ddecdd3](https://github.com/rectitude-open/filapress-core/commit/ddecdd396723c3b048cc202e8ff07386e56f5e83))
+* **deps:** bump rectitude-open/filament-news from 1.13.1 to 1.14.2 ([e69bb1d](https://github.com/rectitude-open/filapress-core/commit/e69bb1d50e3ae1c79db9d63eaf60c05e8994ce24))
+* **deps:** bump rectitude-open/filament-site-navigation ([c08f5ab](https://github.com/rectitude-open/filapress-core/commit/c08f5ab221e6ab48501b2bce44eb39144c20c4f5))
+* **deps:** bump rectitude-open/filament-site-navigation ([e097504](https://github.com/rectitude-open/filapress-core/commit/e097504f0c88cff38319c2713562d2921528b515))
+* **deps:** bump rectitude-open/filament-site-navigation from 1.1.0 to 1.2.0 ([fd8d596](https://github.com/rectitude-open/filapress-core/commit/fd8d596ffb3ce82f4c8e3cb1058600bbc9750289))
+* **deps:** bump rectitude-open/filament-site-navigation from 1.2.0 to 1.3.3 ([fdb1d17](https://github.com/rectitude-open/filapress-core/commit/fdb1d17eb93142041aec83e289ee3194fadd2016))
+* **deps:** bump rectitude-open/filament-site-snippets ([2a21cd8](https://github.com/rectitude-open/filapress-core/commit/2a21cd8b8d4bbfdd23ec9e325abcc37e7f38a667))
+* **deps:** bump rectitude-open/filament-site-snippets from 1.4.0 to 1.5.0 ([dc5b48b](https://github.com/rectitude-open/filapress-core/commit/dc5b48bbccc962d1fe206f604d07fae16b054604))
+
 ## [1.7.0](https://github.com/rectitude-open/filapress-core/compare/v1.6.0...v1.7.0) (2025-06-26)
 
 
