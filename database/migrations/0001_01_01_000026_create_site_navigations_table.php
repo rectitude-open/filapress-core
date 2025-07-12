@@ -20,10 +20,10 @@ return new class extends Migration
             $table->string('path');
             $table->string('controller_action')->nullable();
             $table->json('route_parameters')->nullable();
-            $table->string('child_route_pattern')->nullable();
-            $table->string('child_controller_action')->nullable();
+            $table->json('child_routes')->nullable();
 
             $table->tinyInteger('is_active')->default(1)->comment('0: inactive, 1: active');
+            $table->tinyInteger('is_visible')->default(1)->comment('0: hidden, 1: visible');
 
             $table->integer('parent_id')->default(-1);
             $table->integer('weight')->default(0);
