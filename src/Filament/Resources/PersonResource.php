@@ -15,7 +15,7 @@ class PersonResource extends BasePersonResource
             'index' => Pages\ListPeople::route('/'),
             'create' => Pages\CreatePerson::route('/create'),
             'edit' => Pages\EditPerson::route('/{record}/edit'),
-            'revisions' => Pages\PeopleRevisions::route('/{record}/revisions'),
+            'revisions' => Pages\PersonRevisions::route('/{record}/revisions'),
         ];
     }
 }
