@@ -32,7 +32,6 @@ class FilaPressCoreServiceProvider extends PackageServiceProvider
 
         FilamentView::registerRenderHook(
             PanelsRenderHook::GLOBAL_SEARCH_AFTER,
-            // @phpstan-ignore-next-line
             fn () => view('filapress-core::components.admin.view-site-button'),
         );
     }
