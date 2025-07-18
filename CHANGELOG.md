@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.9.1](https://github.com/rectitude-open/filapress-core/compare/v1.9.0...v1.9.1) (2025-07-18)
+
+
+### Bug Fixes
+
+* update create form fields to include external link ([ed597a1](https://github.com/rectitude-open/filapress-core/commit/ed597a1e9871d869e6a57cfe73f193f647ac3718))
+
+
+### Miscellaneous Chores
+
+* update dependencies to latest versions in composer.lock ([1270a10](https://github.com/rectitude-open/filapress-core/commit/1270a104abae4215e51653b95ab74276af08d26e))
+
 ## [1.9.0](https://github.com/rectitude-open/filapress-core/compare/v1.8.0...v1.9.0) (2025-07-18)
 
 
