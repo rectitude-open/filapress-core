@@ -48,7 +48,7 @@ test('ensure news tags is accessible', function () {
 it('has a field on create form', function (string $field) {
     Livewire::test(CreateNews::class)
         ->assertFormFieldExists($field);
-})->with(['title', 'content', 'categories', 'tags', 'slug', 'summary', 'weight', 'status', 'created_at', 'seo.title', 'seo.author', 'seo.description', 'seo.robots']);
+})->with(['title', 'content', 'categories', 'tags', 'slug', 'external_link', 'summary', 'weight', 'status', 'created_at', 'seo.title', 'seo.author', 'seo.description', 'seo.robots']);
 
 test('can create a news item', function () {
     $newsCategory = NewsCategory::factory()->create();
