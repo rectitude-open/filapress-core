@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.9.0](https://github.com/rectitude-open/filapress-core/compare/v1.8.0...v1.9.0) (2025-07-18)
+
+
+### Features
+
+* add custom Media model extending CuratorMedia with signed URL generation ([ac0c653](https://github.com/rectitude-open/filapress-core/commit/ac0c65308ff9e67ba69dcb181a06ba4ccf1c092b))
+* update migrations for news and pages ([8bdafc7](https://github.com/rectitude-open/filapress-core/commit/8bdafc7c898240d60161feecfe7bdfd3c7241cf5))
+
 ## [1.8.0](https://github.com/rectitude-open/filapress-core/compare/v1.7.1...v1.8.0) (2025-07-15)
 
 
