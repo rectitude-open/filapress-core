@@ -15,8 +15,6 @@ use Filament\Support\Assets\Js;
 use Filament\Support\Colors\Color;
 use Hasnayeen\Themes\Http\Middleware\SetTheme;
 use Hasnayeen\Themes\ThemesPlugin;
-use Illuminate\Support\Facades\Route;
-use Livewire\Livewire;
 use MarcoGermani87\FilamentCaptcha\FilamentCaptcha;
 use Mchev\Banhammer\Middleware\IPBanned;
 use RectitudeOpen\FilamentBanManager\FilamentBanManagerPlugin;
@@ -133,23 +131,7 @@ class FilaPressCorePlugin implements Plugin
         }
     }
 
-    public function boot(Panel $panel): void
-    {
-        Livewire::setScriptRoute(function ($handle) use ($panel) {
-            $prefix = trim(parse_url(config('app.url', ''), PHP_URL_PATH) ?? '', '/');
-            $livewirePath = '/admin-assets/'.config('filapress-core.admin_path', 'admin').'/livewire/livewire.js';
-
-            return Route::get($prefix ? '/'.$prefix.$livewirePath : $livewirePath, $handle)->middleware($panel->getMiddleware());
-        });
-
-        Livewire::setUpdateRoute(function ($handle) use ($panel) {
-            $prefix = trim(parse_url(config('app.url', ''), PHP_URL_PATH) ?? '', '/');
-            $updatePath = '/livewire/update';
-            $fullPath = $prefix ? '/'.$prefix.$updatePath : $updatePath;
-
-            return Route::post($fullPath, $handle)->middleware($panel->getMiddleware());
-        });
-    }
+    public function boot(Panel $panel): void {}
 
     public static function make(): static
     {

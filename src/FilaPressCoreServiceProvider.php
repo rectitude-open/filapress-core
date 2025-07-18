@@ -13,7 +13,9 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\View\PanelsRenderHook;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
+use Livewire\Livewire;
 use RectitudeOpen\FilamentBanManager\Models\Ban;
 use RectitudeOpen\FilamentContactLogs\Models\ContactLog;
 use RectitudeOpen\FilamentInfoPages\Models\Page;
@@ -46,6 +48,21 @@ class FilaPressCoreServiceProvider extends PackageServiceProvider
 
     public function packageBooted(): void
     {
+        Livewire::setScriptRoute(function ($handle) {
+            $prefix = trim(parse_url(config('app.url', ''), PHP_URL_PATH) ?? '', '/');
+            $livewirePath = '/admin-assets/'.config('filapress-core.admin_path', 'admin').'/livewire/livewire.js';
+
+            return Route::get($prefix ? '/'.$prefix.$livewirePath : $livewirePath, $handle);
+        });
+
+        Livewire::setUpdateRoute(function ($handle) {
+            $prefix = trim(parse_url(config('app.url', ''), PHP_URL_PATH) ?? '', '/');
+            $updatePath = '/livewire/update';
+            $fullPath = $prefix ? '/'.$prefix.$updatePath : $updatePath;
+
+            return Route::post($fullPath, $handle);
+        });
+
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadMigrationsFrom(__DIR__.'/../database/settings');
 
