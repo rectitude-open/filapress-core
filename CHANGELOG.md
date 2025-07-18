@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.2](https://github.com/rectitude-open/filapress-core/compare/v1.9.1...v1.9.2) (2025-07-18)
+
+
+### Bug Fixes
+
+* update view site button link to use app URL configuration ([47f880d](https://github.com/rectitude-open/filapress-core/commit/47f880dd830c3bc1fb5ae8a52d2035ce356482e6))
+
 ## [1.9.1](https://github.com/rectitude-open/filapress-core/compare/v1.9.0...v1.9.1) (2025-07-18)
 
 
