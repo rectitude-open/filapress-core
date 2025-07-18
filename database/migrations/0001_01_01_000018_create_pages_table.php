@@ -17,7 +17,7 @@ return new class extends Migration
             $table->increments('id');
             $table->string('title')->default('');
             $table->string('slug')->nullable()->unique();
-            $table->text('content')->nullable();
+            $table->longText('content')->nullable();
             $table->unsignedBigInteger('featured_image_id')->nullable();
             $table->unsignedTinyInteger('status')->default(1)->comment('1=active, 0=suspended');
             $table->timestamps();

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->increments('id');
             $table->string('title')->default('');
             $table->string('slug')->default('');
+            $table->string('external_link')->default('');
             $table->string('summary')->default('');
             $table->text('content')->nullable();
             $table->integer('weight')->default(0);
