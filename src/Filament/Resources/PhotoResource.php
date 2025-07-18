@@ -15,7 +15,6 @@ class PhotoResource extends BasePhotoResource
             'index' => Pages\ListPhotos::route('/'),
             'create' => Pages\CreatePhoto::route('/create'),
             'edit' => Pages\EditPhoto::route('/{record}/edit'),
-            'revisions' => Pages\PhotoRevisions::route('/{record}/revisions'),
         ];
     }
 }
