@@ -4,13 +4,34 @@ declare(strict_types=1);
 
 namespace RectitudeOpen\FilaPressCore;
 
+use Awcodes\Curator\Models\Media;
+use Filament\Forms\Components\DateTimePicker;
+use Filament\Notifications\Livewire\Notifications;
+use Filament\Support\Enums\Alignment;
 use Filament\Support\Facades\FilamentView;
+use Filament\Tables\Columns\TextColumn;
 use Filament\View\PanelsRenderHook;
+use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Str;
+use RectitudeOpen\FilamentBanManager\Models\Ban;
+use RectitudeOpen\FilamentContactLogs\Models\ContactLog;
+use RectitudeOpen\FilamentInfoPages\Models\Page;
+use RectitudeOpen\FilamentNews\Models\News;
+use RectitudeOpen\FilamentSiteNavigation\Models\SiteNavigation;
+use RectitudeOpen\FilamentSiteSnippets\Models\SiteSnippet;
 use RectitudeOpen\FilaPressCore\Commands\FilaPressCoreCommand;
+use RectitudeOpen\FilaPressCore\Listeners\LogSavingSettings;
+use RectitudeOpen\FilaPressCore\Listeners\LogSettingsSaved;
+use RectitudeOpen\FilaPressCore\Models\Admin;
+use Spatie\Activitylog\Models\Activity;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Spatie\LaravelSettings\Events\SavingSettings;
+use Spatie\LaravelSettings\Events\SettingsSaved;
+use Spatie\Permission\Models\Role;
 use Symfony\Component\Finder\Finder;
+use Tapp\FilamentMailLog\Models\MailLog;
 
 class FilaPressCoreServiceProvider extends PackageServiceProvider
 {
@@ -23,10 +44,8 @@ class FilaPressCoreServiceProvider extends PackageServiceProvider
         }
     }
 
-    public function boot()
+    public function packageBooted(): void
     {
-        parent::boot();
-
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadMigrationsFrom(__DIR__.'/../database/settings');
 
@@ -35,6 +54,34 @@ class FilaPressCoreServiceProvider extends PackageServiceProvider
             // @phpstan-ignore-next-line
             fn () => view('filapress-core::components.admin.view-site-button'),
         );
+
+        DateTimePicker::configureUsing(function (DateTimePicker $component): void {
+            $component->format('Y-m-d H:i:s');
+            $component->displayFormat('Y-m-d H:i:s');
+        });
+
+        TextColumn::configureUsing(function (TextColumn $component): void {
+            if (in_array($component->getName(), ['created_at', 'updated_at', 'published_at', 'email_verified_at'])) {
+                $component->dateTime('Y-m-d H:i:s');
+            }
+        });
+
+        Notifications::alignment(Alignment::Center);
+
+        Gate::policy(Admin::class, Policies\AdminPolicy::class);
+        Gate::policy(Role::class, Policies\RolePolicy::class);
+        Gate::policy(News::class, Policies\NewsPolicy::class);
+        Gate::policy(Ban::class, Policies\BanPolicy::class);
+        Gate::policy(MailLog::class, Policies\MailLogPolicy::class);
+        Gate::policy(Activity::class, Policies\ActivityPolicy::class);
+        Gate::policy(Page::class, Policies\PagePolicy::class);
+        Gate::policy(ContactLog::class, Policies\ContactLogPolicy::class);
+        Gate::policy(SiteNavigation::class, Policies\SiteNavigationPolicy::class);
+        Gate::policy(SiteSnippet::class, Policies\SiteSnippetPolicy::class);
+        Gate::policy(Media::class, Policies\MediaPolicy::class);
+
+        Event::listen(SavingSettings::class, LogSavingSettings::class);
+        Event::listen(SettingsSaved::class, LogSettingsSaved::class);
     }
 
     public static function getCoreConfigsToLoad(): array
