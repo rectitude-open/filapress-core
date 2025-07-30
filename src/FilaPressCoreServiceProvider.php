@@ -55,14 +55,6 @@ class FilaPressCoreServiceProvider extends PackageServiceProvider
             return Route::get($prefix ? '/'.$prefix.$livewirePath : $livewirePath, $handle);
         });
 
-        Livewire::setUpdateRoute(function ($handle) {
-            $prefix = trim(parse_url(config('app.url', ''), PHP_URL_PATH) ?? '', '/');
-            $updatePath = '/livewire/update';
-            $fullPath = $prefix ? '/'.$prefix.$updatePath : $updatePath;
-
-            return Route::post($fullPath, $handle);
-        });
-
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadMigrationsFrom(__DIR__.'/../database/settings');
 
