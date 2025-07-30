@@ -13,6 +13,10 @@ abstract class BaseEditRecord extends EditRecord
 {
     protected function getRedirectUrl(): string
     {
+        if ($this->previousUrl) {
+            return $this->previousUrl;
+        }
+
         return $this->getResource()::getUrl('index');
     }
 
