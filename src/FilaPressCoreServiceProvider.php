@@ -20,6 +20,7 @@ use RectitudeOpen\FilamentBanManager\Models\Ban;
 use RectitudeOpen\FilamentContactLogs\Models\ContactLog;
 use RectitudeOpen\FilamentInfoPages\Models\Page;
 use RectitudeOpen\FilamentNews\Models\News;
+use RectitudeOpen\FilamentPeople\Models\Person;
 use RectitudeOpen\FilamentSiteNavigation\Models\SiteNavigation;
 use RectitudeOpen\FilamentSiteSnippets\Models\SiteSnippet;
 use RectitudeOpen\FilaPressCore\Commands\FilaPressCoreCommand;
@@ -88,6 +89,7 @@ class FilaPressCoreServiceProvider extends PackageServiceProvider
         Gate::policy(SiteNavigation::class, Policies\SiteNavigationPolicy::class);
         Gate::policy(SiteSnippet::class, Policies\SiteSnippetPolicy::class);
         Gate::policy(Media::class, Policies\MediaPolicy::class);
+        Gate::policy(Person::class, Policies\PersonPolicy::class);
 
         Event::listen(SavingSettings::class, LogSavingSettings::class);
         Event::listen(SettingsSaved::class, LogSettingsSaved::class);
