@@ -17,7 +17,7 @@ return [
     ],
     'photo_category' => [
         'model' => \RectitudeOpen\FilamentPhotos\Models\PhotoCategory::class,
-        'page' => \RectitudeOpen\FilamentPhotos\Filament\Pages\PhotoCategory::class,
+        'page' => \RectitudeOpen\FilaPressCore\Filament\Pages\PhotoCategory::class,
         'navigation_sort' => 2,
         'navigation_icon' => 'heroicon-o-rectangle-stack',
     ],
