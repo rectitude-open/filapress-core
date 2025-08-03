@@ -20,6 +20,7 @@ use Mchev\Banhammer\Middleware\IPBanned;
 use RectitudeOpen\FilamentBanManager\FilamentBanManagerPlugin;
 use RectitudeOpen\FilamentContactLogs\FilamentContactLogsPlugin;
 use RectitudeOpen\FilamentInfoPages\FilamentInfoPagesPlugin;
+use RectitudeOpen\FilamentLocalePicker\FilamentLocalePickerPlugin;
 use RectitudeOpen\FilamentNews\FilamentNewsPlugin;
 use RectitudeOpen\FilamentSiteNavigation\FilamentSiteNavigationPlugin;
 use RectitudeOpen\FilamentSiteSnippets\FilamentSiteSnippetsPlugin;
@@ -79,6 +80,7 @@ class FilaPressCorePlugin implements Plugin
                 FilamentUsersPlugin::make(),
                 FilamentBanManagerPlugin::make(),
                 FilamentSystemSettingsPlugin::make(),
+                FilamentLocalePickerPlugin::make(),
                 CuratorPlugin::make()
                     ->label('Media')
                     ->navigationIcon('heroicon-o-photo')

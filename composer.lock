@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "72d790b2dd5ab13f0f0965a14938e574",
+    "content-hash": "e72c5c2385d57d3df1ad5b55912d6f60",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -5210,6 +5210,74 @@
             "time": "2025-01-30T13:51:11+00:00"
         },
         {
+            "name": "outhebox/blade-flags",
+            "version": "1.5.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MohmmedAshraf/blade-flags.git",
+                "reference": "84d37c6c44e5509412c894a90ecdad737b96488f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MohmmedAshraf/blade-flags/zipball/84d37c6c44e5509412c894a90ecdad737b96488f",
+                "reference": "84d37c6c44e5509412c894a90ecdad737b96488f",
+                "shasum": ""
+            },
+            "require": {
+                "blade-ui-kit/blade-icons": "^1.1",
+                "illuminate/support": "^8.0|^9.0|^10.0|^11.0|^12.0",
+                "php": "^7.4|^8.0|^8.1|^8.2"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.0|^7.0|^8.0|^9.0|^10.0",
+                "phpunit/phpunit": "^9.0|^10.5|^11.5.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "OutheBox\\BladeFlags\\BladeFlagsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "OutheBox\\BladeFlags\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mohamed Ashraf",
+                    "email": "cupo.ashraf@gmail.com",
+                    "homepage": "https://github.com/MohmmedAshraf"
+                }
+            ],
+            "description": "A package to easily make use of country & language flags in your Laravel Blade views.",
+            "homepage": "https://github.com/MohmmedAshraf/blade-flags",
+            "keywords": [
+                "blade",
+                "country flags",
+                "flags",
+                "language flags",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/MohmmedAshraf/blade-flags/issues",
+                "source": "https://github.com/MohmmedAshraf/blade-flags/tree/1.5.3"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/MohmmedAshraf",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-02-24T15:04:52+00:00"
+        },
+        {
             "name": "overtrue/laravel-versionable",
             "version": "5.5.0",
             "source": {
@@ -6762,6 +6830,75 @@
                 "source": "https://github.com/rectitude-open/filament-info-pages"
             },
             "time": "2025-07-19T09:40:30+00:00"
+        },
+        {
+            "name": "rectitude-open/filament-locale-picker",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rectitude-open/filament-locale-picker.git",
+                "reference": "e39d7c9282633cea812d5a6c92049aee41fd917d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rectitude-open/filament-locale-picker/zipball/e39d7c9282633cea812d5a6c92049aee41fd917d",
+                "reference": "e39d7c9282633cea812d5a6c92049aee41fd917d",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^3.0",
+                "outhebox/blade-flags": "^1.5",
+                "php": "^8.1",
+                "spatie/laravel-package-tools": "^1.15.0"
+            },
+            "require-dev": {
+                "larastan/larastan": "^2.0",
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^7.9",
+                "orchestra/testbench": "^8.0",
+                "pestphp/pest": "^2.1",
+                "pestphp/pest-plugin-arch": "^2.0",
+                "pestphp/pest-plugin-laravel": "^2.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "FilamentLocalePicker": "RectitudeOpen\\FilamentLocalePicker\\Facades\\FilamentLocalePicker"
+                    },
+                    "providers": [
+                        "RectitudeOpen\\FilamentLocalePicker\\FilamentLocalePickerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "RectitudeOpen\\FilamentLocalePicker\\": "src/",
+                    "RectitudeOpen\\FilamentLocalePicker\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aspirant Zhang",
+                    "email": "admin@aspirantzhang.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This is my package filament-locale-picker",
+            "homepage": "https://github.com/rectitude-open/filament-locale-picker",
+            "keywords": [
+                "filament",
+                "filament plugin"
+            ],
+            "support": {
+                "issues": "https://github.com/rectitude-open/filament-locale-picker/issues",
+                "source": "https://github.com/rectitude-open/filament-locale-picker"
+            },
+            "time": "2025-08-02T15:18:21+00:00"
         },
         {
             "name": "rectitude-open/filament-news",
