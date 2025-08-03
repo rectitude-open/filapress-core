@@ -34,7 +34,7 @@ abstract class BaseCreateRecord extends CreateRecord
     {
         return [
             $this->getCreateFormAction()
-                ->icon('heroicon-o-paper-airplane')
+                ->icon('heroicon-o-document-check')
                 ->label(__('action.publish')),
             $this->getCreateAnotherFormAction()
                 ->icon('heroicon-o-plus')
