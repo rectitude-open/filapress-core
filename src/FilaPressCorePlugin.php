@@ -82,10 +82,6 @@ class FilaPressCorePlugin implements Plugin
                 FilamentSystemSettingsPlugin::make(),
                 FilamentLocalePickerPlugin::make(),
                 CuratorPlugin::make()
-                    ->label('Media')
-                    ->navigationIcon('heroicon-o-photo')
-                    ->navigationGroup('Content')
-                    ->navigationSort(100)
                     ->registerNavigation(true)
                     ->defaultListView('list'),
             ])
@@ -110,10 +106,7 @@ class FilaPressCorePlugin implements Plugin
         }
 
         if (config('filapress-core.plugins.FilamentMailLogPlugin', true)) {
-            $panel->plugins([FilamentMailLogPlugin::make()])
-                ->resources([
-                    \RectitudeOpen\FilaPressCore\Filament\Resources\MailLogResource::class,
-                ]);
+            $panel->plugins([FilamentMailLogPlugin::make()]);
         }
 
         if (config('filapress-core.plugins.FilamentInfoPagesPlugin', true)) {
