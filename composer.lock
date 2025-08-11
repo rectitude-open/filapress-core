@@ -6762,16 +6762,16 @@
         },
         {
             "name": "rectitude-open/filament-info-pages",
-            "version": "v1.12.0",
+            "version": "v1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectitude-open/filament-info-pages.git",
-                "reference": "7ecd00d9d4c7e62fbde9fcd004139f7ab5f8bca1"
+                "reference": "41cae8c9078e46a7d73bf9c167cbeb289bb46703"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectitude-open/filament-info-pages/zipball/7ecd00d9d4c7e62fbde9fcd004139f7ab5f8bca1",
-                "reference": "7ecd00d9d4c7e62fbde9fcd004139f7ab5f8bca1",
+                "url": "https://api.github.com/repos/rectitude-open/filament-info-pages/zipball/41cae8c9078e46a7d73bf9c167cbeb289bb46703",
+                "reference": "41cae8c9078e46a7d73bf9c167cbeb289bb46703",
                 "shasum": ""
             },
             "require": {
@@ -6835,7 +6835,7 @@
                 "issues": "https://github.com/rectitude-open/filament-info-pages/issues",
                 "source": "https://github.com/rectitude-open/filament-info-pages"
             },
-            "time": "2025-07-19T09:40:30+00:00"
+            "time": "2025-08-06T12:37:50+00:00"
         },
         {
             "name": "rectitude-open/filament-locale-picker",
