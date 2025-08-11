@@ -6615,16 +6615,16 @@
         },
         {
             "name": "rectitude-open/filament-contact-logs",
-            "version": "v1.3.0",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectitude-open/filament-contact-logs.git",
-                "reference": "c83cde0d29744b6b87af623d64ae5efad370cf42"
+                "reference": "d8100f9b0c9d2722d9a700b0c9c8bdb33a964c06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectitude-open/filament-contact-logs/zipball/c83cde0d29744b6b87af623d64ae5efad370cf42",
-                "reference": "c83cde0d29744b6b87af623d64ae5efad370cf42",
+                "url": "https://api.github.com/repos/rectitude-open/filament-contact-logs/zipball/d8100f9b0c9d2722d9a700b0c9c8bdb33a964c06",
+                "reference": "d8100f9b0c9d2722d9a700b0c9c8bdb33a964c06",
                 "shasum": ""
             },
             "require": {
@@ -6668,22 +6668,23 @@
             ],
             "authors": [
                 {
-                    "name": "Rectitude Open",
-                    "email": "open@rectitude.dev",
+                    "name": "Aspirant Zhang",
+                    "email": "admin@aspirantzhang.com",
                     "role": "Developer"
                 }
             ],
-            "description": "This is my package filament-contact-logs",
+            "description": "A Filament plugin to display website contact form submissions with a read-only interface.",
             "homepage": "https://github.com/rectitude-open/filament-contact-logs",
             "keywords": [
-                "filament",
-                "filament plugin"
+                "contact form",
+                "filament plugin",
+                "laravel"
             ],
             "support": {
                 "issues": "https://github.com/rectitude-open/filament-contact-logs/issues",
                 "source": "https://github.com/rectitude-open/filament-contact-logs"
             },
-            "time": "2025-05-25T04:18:51+00:00"
+            "time": "2025-08-10T10:56:48+00:00"
         },
         {
             "name": "rectitude-open/filament-info-alert",
