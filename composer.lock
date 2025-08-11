@@ -7065,16 +7065,16 @@
         },
         {
             "name": "rectitude-open/filament-photos",
-            "version": "v1.8.0",
+            "version": "v1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectitude-open/filament-photos.git",
-                "reference": "6395c23f618d287de7e88dba802a6787b8b61134"
+                "reference": "76a117385541c03f6e0c86aed7ca220999fb9f62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectitude-open/filament-photos/zipball/6395c23f618d287de7e88dba802a6787b8b61134",
-                "reference": "6395c23f618d287de7e88dba802a6787b8b61134",
+                "url": "https://api.github.com/repos/rectitude-open/filament-photos/zipball/76a117385541c03f6e0c86aed7ca220999fb9f62",
+                "reference": "76a117385541c03f6e0c86aed7ca220999fb9f62",
                 "shasum": ""
             },
             "require": {
@@ -7139,7 +7139,7 @@
                 "issues": "https://github.com/rectitude-open/filament-photos/issues",
                 "source": "https://github.com/rectitude-open/filament-photos"
             },
-            "time": "2025-07-19T03:56:00+00:00"
+            "time": "2025-08-05T08:48:03+00:00"
         },
         {
             "name": "rectitude-open/filament-site-navigation",
