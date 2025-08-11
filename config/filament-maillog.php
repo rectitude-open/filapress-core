@@ -8,7 +8,7 @@ return [
     ],
 
     'resources' => [
-        'MaiLogResource' => RectitudeOpen\FilaPressCore\Filament\Resources\MailLogResource::class,
+        'MaiLogResource' => \Tapp\FilamentMailLog\Resources\MailLogResource::class,
     ],
 
     'navigation' => [
