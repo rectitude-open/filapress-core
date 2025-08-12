@@ -123,6 +123,7 @@ class FilaPressCoreServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('filapress-core')
+            ->hasTranslations()
             ->hasConfigFile([
                 'audit',
                 'ban',
