@@ -3,5 +3,13 @@
 declare(strict_types=1);
 
 return [
-    'view_site' => '查看站点',
+    'action' => [
+        'more_actions' => '更多操作',
+        'publish' => '发布',
+        'back' => '返回',
+        'save' => '保存',
+        'create_another' => '发布并创建另一个',
+        'revisions' => '历史版本',
+        'view_site' => '查看站点',
+    ],
 ];

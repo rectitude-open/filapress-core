@@ -1,6 +1,6 @@
 <a href="{{ config('app.url') }}" target="_blank"
     class="me-4 flex items-center justify-center gap-x-2 rounded-lg bg-white px-3 py-2 text-sm font-semibold text-gray-600 ring-1 ring-gray-950/10 hover:bg-gray-50 dark:bg-gray-900 dark:text-gray-300 dark:ring-white/20 dark:hover:bg-gray-800">
-    <span>{{ __('filapress-core::filapress-core.view_site') }}</span>
+    <span>{{ __('filapress-core::filapress-core.action.view_site') }}</span>
 
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
         class="h-5 w-5 text-gray-400">

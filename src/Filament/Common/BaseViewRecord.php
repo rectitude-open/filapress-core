@@ -18,7 +18,7 @@ abstract class BaseViewRecord extends ViewRecord
                 ->alpineClickHandler('document.referrer ? window.history.back() : (window.location.href = '.Js::from($this->previousUrl ?? static::getResource()::getUrl()).')')
                 ->color('gray')
                 ->icon('heroicon-o-arrow-left')
-                ->label(__('action.back')),
+                ->label(__('filapress-core::filapress-core.action.back')),
         ];
     }
 }

@@ -35,7 +35,7 @@ abstract class BaseEditRecord extends EditRecord
                 Actions\DeleteAction::make()
                     ->icon('heroicon-o-trash'),
             ])
-                ->label('More actions')
+                ->label(__('filapress-core::filapress-core.action.more_actions'))
                 ->icon('heroicon-m-ellipsis-vertical')
                 ->color('gray')
                 ->button(),
@@ -61,7 +61,7 @@ abstract class BaseEditRecord extends EditRecord
                 Actions\DeleteAction::make()
                     ->icon('heroicon-o-trash'),
             ])
-                ->label('More actions')
+                ->label(__('filapress-core::filapress-core.action.more_actions'))
                 ->icon('heroicon-m-ellipsis-vertical')
                 ->color('gray')
                 ->button(),
@@ -72,14 +72,14 @@ abstract class BaseEditRecord extends EditRecord
     {
         return $this->getCancelFormAction()
             ->icon('heroicon-o-arrow-left')
-            ->label(__('action.back'));
+            ->label(__('filapress-core::filapress-core.action.back'));
     }
 
     protected function getSubmitAction(): Actions\Action
     {
         return $this->getSubmitFormAction()
             ->icon('heroicon-o-document-check')
-            ->label(__('action.save'))
+            ->label(__('filapress-core::filapress-core.action.save'))
             ->formId('form');
     }
 
@@ -89,6 +89,6 @@ abstract class BaseEditRecord extends EditRecord
             ->grouped()
             ->color('info')
             ->icon('heroicon-o-clock')
-            ->label(__('action.revisions'));
+            ->label(__('filapress-core::filapress-core.action.revisions'));
     }
 }

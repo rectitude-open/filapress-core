@@ -23,7 +23,7 @@ class BaseRevisionsPage extends RevisionsPage
                 ->label(__('filament-panels::resources/pages/edit-record.form.actions.cancel.label'))
                 ->alpineClickHandler('document.referrer ? window.history.back() : (window.location.href = '.Js::from($this->previousUrl ?? static::getResource()::getUrl()).')')
                 ->icon('heroicon-o-arrow-left')
-                ->label(__('action.back')),
+                ->label(__('filapress-core::filapress-core.action.back')),
         ];
     }
 

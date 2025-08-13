@@ -18,14 +18,14 @@ abstract class BaseCreateRecord extends CreateRecord
         return [
             $this->getCancelFormAction()
                 ->icon('heroicon-o-arrow-left')
-                ->label(__('action.back')),
+                ->label(__('filapress-core::filapress-core.action.back')),
             $this->getCreateAnotherFormAction()
                 ->icon('heroicon-o-plus')
-                ->label(__('action.create_another'))
+                ->label(__('filapress-core::filapress-core.action.create_another'))
                 ->formId('form'),
             $this->getCreateFormAction()
                 ->icon('heroicon-o-document-check')
-                ->label(__('action.publish'))
+                ->label(__('filapress-core::filapress-core.action.publish'))
                 ->formId('form'),
         ];
     }
@@ -35,13 +35,13 @@ abstract class BaseCreateRecord extends CreateRecord
         return [
             $this->getCreateFormAction()
                 ->icon('heroicon-o-document-check')
-                ->label(__('action.publish')),
+                ->label(__('filapress-core::filapress-core.action.publish')),
             $this->getCreateAnotherFormAction()
                 ->icon('heroicon-o-plus')
-                ->label(__('action.create_another')),
+                ->label(__('filapress-core::filapress-core.action.create_another')),
             $this->getCancelFormAction()
                 ->icon('heroicon-o-arrow-left')
-                ->label(__('action.back')),
+                ->label(__('filapress-core::filapress-core.action.back')),
         ];
     }
 }
