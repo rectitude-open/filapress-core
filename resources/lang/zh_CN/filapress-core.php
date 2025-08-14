@@ -12,4 +12,15 @@ return [
         'revisions' => '历史版本',
         'view_site' => '查看站点',
     ],
+    'navigation' => [
+        'group' => [
+            'content' => '内容',
+            'security' => '安全',
+            'settings' => '设置',
+        ],
+        'item' => [
+            'admin' => '管理员',
+            'media' => '媒体',
+        ],
+    ],
 ];

@@ -12,4 +12,15 @@ return [
         'revisions' => 'Revisions',
         'view_site' => 'View Site',
     ],
+    'navigation' => [
+        'group' => [
+            'content' => 'Content',
+            'security' => 'Security',
+            'settings' => 'Settings',
+        ],
+        'item' => [
+            'admin' => 'Admins',
+            'media' => 'Media',
+        ],
+    ],
 ];

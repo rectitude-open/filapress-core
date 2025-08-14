@@ -61,12 +61,12 @@ class FilaPressCorePlugin implements Plugin
             ])
             ->navigationGroups([
                 NavigationGroup::make()
-                    ->label(__('menu.nav_group.content')),
+                    ->label(__('filapress-core::filapress-core.navigation.group.content')),
                 NavigationGroup::make()
-                    ->label(__('menu.nav_group.security'))
+                    ->label(__('filapress-core::filapress-core.navigation.group.security'))
                     ->collapsed(),
                 NavigationGroup::make()
-                    ->label(__('menu.nav_group.settings'))
+                    ->label(__('filapress-core::filapress-core.navigation.group.settings'))
                     ->collapsed(),
             ])
             ->resources([

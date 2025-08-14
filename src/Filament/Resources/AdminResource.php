@@ -34,22 +34,22 @@ class AdminResource extends Resource
 
     public static function getNavigationLabel(): string
     {
-        return __('menu.nav_item.admin');
+        return __('filapress-core::filapress-core.navigation.item.admin');
     }
 
     public static function getLabel(): string
     {
-        return __('menu.nav_item.admin');
+        return __('filapress-core::filapress-core.navigation.item.admin');
     }
 
     public static function getNavigationGroup(): ?string
     {
-        return __('menu.nav_group.security');
+        return __('filapress-core::filapress-core.navigation.group.security');
     }
 
     public function getTitle(): string
     {
-        return __('menu.nav_item.admin');
+        return __('filapress-core::filapress-core.navigation.item.admin');
     }
 
     public static function getRelations(): array

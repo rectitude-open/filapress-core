@@ -46,6 +46,8 @@ class FilaPressCoreServiceProvider extends PackageServiceProvider
         foreach ($coreConfigs as $key => $path) {
             $this->mergeConfigFrom($path, $key);
         }
+
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'filapress-core');
     }
 
     public function packageBooted(): void
