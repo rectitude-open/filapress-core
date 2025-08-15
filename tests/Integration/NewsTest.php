@@ -30,19 +30,19 @@ beforeEach(function () {
 test('ensure news section is accessible', function () {
     $response = $this->get('/admin-admin/news/news');
     $response->assertStatus(200);
-    $response->assertSee('New news');
+    $response->assertSee('News List');
 });
 
 test('ensure news categories is accessible', function () {
     $response = $this->get('/admin-admin/news/news-category');
     $response->assertStatus(200);
-    $response->assertSee('New news category');
+    $response->assertSee('News Categories');
 });
 
 test('ensure news tags is accessible', function () {
     $response = $this->get('/admin-admin/news/news-tags');
     $response->assertStatus(200);
-    $response->assertSee('No tags');
+    $response->assertSee('News Tags');
 });
 
 it('has a field on create form', function (string $field) {
