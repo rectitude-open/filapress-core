@@ -22,7 +22,7 @@ it('can see navigations in the admin panel if the user is a super admin', functi
     $response->assertStatus(200);
 
     $response->assertSee($nav);
-})->with(['Content', 'Dashboard', 'News', 'Site Navigation', 'Media', 'Pages', 'Contact Form Logs', 'Site Snippets', 'Security', 'Roles', 'Ban Manager', 'Admins', 'Mail Logs', 'Activity Log', 'Settings', 'System']);
+})->with(['Dashboard', 'Content', 'Security', 'Settings', 'News', 'People', 'Photos', 'Pages', 'Site Snippets', 'Media', 'Contact Form Logs', 'Site Navigation', 'Roles', 'Ban Manager', 'Admins', 'Mail Logs', 'Activity Log', 'System Settings']);
 
 it('cannot see navigations in the admin panel if the user is not a super admin', function (string $nav) {
     Role::create([
