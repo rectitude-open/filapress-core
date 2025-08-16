@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Sequence;
 use Livewire\Livewire;
 use RectitudeOpen\FilamentNews\Models\News;
 use RectitudeOpen\FilamentNews\Models\NewsCategory;
+use RectitudeOpen\FilaPressCore\Filament\Pages\NewsCategory as NewsCategoryPage;
 use RectitudeOpen\FilaPressCore\Filament\Resources\NewsResource\Pages\CreateNews;
 use RectitudeOpen\FilaPressCore\Filament\Resources\NewsResource\Pages\EditNews;
 use RectitudeOpen\FilaPressCore\Filament\Resources\NewsResource\Pages\ListNews;
@@ -124,4 +125,19 @@ test('can list news with pagination', function () {
     Livewire::test(ListNews::class)
         ->call('gotoPage', 2)
         ->assertCanSeeTableRecords($sortedRecords->skip(10));
+});
+
+it('can create news category item', function () {
+    Livewire::test(NewsCategoryPage::class)
+        ->callAction('create')
+        ->assertActionMounted('create')
+        ->setActionData([
+            'title' => 'Test Category',
+        ])
+        ->callMountedAction()
+        ->assertHasNoActionErrors();
+
+    $this->assertDatabaseHas('news_categories', [
+        'title' => 'Test Category',
+    ]);
 });
