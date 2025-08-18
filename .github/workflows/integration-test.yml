@@ -24,12 +24,12 @@ jobs:
 
     steps:
       - name: Checkout filapress-core (this repository)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           path: filapress-core
 
       - name: Checkout FilaPress application
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: rectitude-open/filapress
           path: filapress-app
