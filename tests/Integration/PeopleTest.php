@@ -5,14 +5,14 @@ declare(strict_types=1);
 use Filament\Tables\Actions\DeleteBulkAction;
 use Illuminate\Database\Eloquent\Factories\Sequence;
 use Livewire\Livewire;
+use RectitudeOpen\FilamentPeople\Models\Person;
 use RectitudeOpen\FilamentPeople\Models\PersonCategory;
 use RectitudeOpen\FilaPressCore\Filament\Pages\PersonCategory as PersonCategoryPage;
 use RectitudeOpen\FilaPressCore\Filament\Resources\PersonResource\Pages\CreatePerson;
+use RectitudeOpen\FilaPressCore\Filament\Resources\PersonResource\Pages\EditPerson;
 use RectitudeOpen\FilaPressCore\Filament\Resources\PersonResource\Pages\ListPeople;
 use RectitudeOpen\FilaPressCore\Models\Admin;
 use Spatie\Permission\Models\Role;
-use RectitudeOpen\FilamentPeople\Models\Person;
-use RectitudeOpen\FilaPressCore\Filament\Resources\PersonResource\Pages\EditPerson;
 
 beforeEach(function () {
     Role::create([
@@ -94,7 +94,7 @@ test('can edit a person item', function () {
 test('can delete a person item', function () {
     $person = Person::factory()->create();
 
-    Livewire::test(ListPeople ::class)
+    Livewire::test(ListPeople::class)
         ->callTableBulkAction(DeleteBulkAction::class, [$person]);
 
     $this->assertSoftDeleted('people', [
@@ -104,7 +104,7 @@ test('can delete a person item', function () {
 
 test('can list people items', function () {
     $records = Person::factory(3)->create();
-    Livewire::test(ListPeople ::class)
+    Livewire::test(ListPeople::class)
         ->assertCanSeeTableRecords($records);
 });
 
@@ -118,7 +118,7 @@ test('can list people with pagination', function () {
     $sortedRecords = $records->sortByDesc('created_at');
 
     $this->assertDatabaseCount('people', 20);
-    Livewire::test(ListPeople ::class)
+    Livewire::test(ListPeople::class)
         ->call('gotoPage', 2)
         ->assertCanSeeTableRecords($sortedRecords->skip(10));
 });
