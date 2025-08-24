@@ -1,5 +1,66 @@
 # Changelog
 
+## [1.10.0](https://github.com/rectitude-open/filapress-core/compare/v1.9.2...v1.10.0) (2025-08-24)
+
+
+### Features
+
+* add configuration for Filament People and categories ([2e39448](https://github.com/rectitude-open/filapress-core/commit/2e394487f78e7c7a253e7582962ee700bdf0e80d))
+* add create news category test ([6f1c2e2](https://github.com/rectitude-open/filapress-core/commit/6f1c2e2b371febf7ba34d348064426ee78c4d0a4))
+* add English and Chinese language support for 'view_site' text and update view-site button to use translation ([6f2b97c](https://github.com/rectitude-open/filapress-core/commit/6f2b97cfd702d716a55ac333e66b6a82188870c5))
+* add Filament Locale Picker Plugin ([bfb8959](https://github.com/rectitude-open/filapress-core/commit/bfb8959c5b572563e99439d654b285be90e75cfd))
+* add jacobtims/filament-logger dependency and remove z3d0x/filament-logger ([65efd58](https://github.com/rectitude-open/filapress-core/commit/65efd581c9c5fc4f3d0ff5f23c7cff6c9309cc7d))
+* add navigation structure and update labels for localization support ([ac5bab1](https://github.com/rectitude-open/filapress-core/commit/ac5bab12d2c75f05ff75ea7e96b2af797ecdda89))
+* add people test ([0f137e3](https://github.com/rectitude-open/filapress-core/commit/0f137e3492b65437811e62a791c3ecd65e9596ae))
+* add Person policy and category page for access control ([0591222](https://github.com/rectitude-open/filapress-core/commit/0591222e3733d78004c4ab03df990be802d6f862))
+* add Photo policy and category page for access control ([e24ef10](https://github.com/rectitude-open/filapress-core/commit/e24ef109a43576046c66c923b1ee095b9f2fd78c))
+* add photo test ([da816fa](https://github.com/rectitude-open/filapress-core/commit/da816fa979705acdf959e9d58207c79369610591))
+* restructure action labels for consistency and localization support ([dfe285b](https://github.com/rectitude-open/filapress-core/commit/dfe285b5e1d45def235b558050265441920da895))
+* update filament-people and add people test ([e68b8d8](https://github.com/rectitude-open/filapress-core/commit/e68b8d83c2e620988041b9623c7d98206fd61b28))
+* update Media navigation settings and add MediaResource class ([3f47a67](https://github.com/rectitude-open/filapress-core/commit/3f47a67bcfe6c0cfc3d87c62a7fbbca608a8e2c8))
+
+
+### Bug Fixes
+
+* ensure redirect URL uses previous URL if available ([698e57f](https://github.com/rectitude-open/filapress-core/commit/698e57f2168bab3f95614b0fe98fc74c36bf496c))
+* update publish action icon in BaseCreateRecord ([28d2534](https://github.com/rectitude-open/filapress-core/commit/28d25346d13a486fe5e2e6598be1e334a4dc033d))
+
+
+### Miscellaneous Chores
+
+* **deps-dev:** bump larastan/larastan from 3.5.0 to 3.6.0 ([b273408](https://github.com/rectitude-open/filapress-core/commit/b2734086e7efbce4e82bd184be5ff457298188f4))
+* **deps-dev:** bump larastan/larastan from 3.5.0 to 3.6.0 ([c40174c](https://github.com/rectitude-open/filapress-core/commit/c40174ce4dcd96cc0d35f1a2e889836cc57e2c51))
+* **deps:** bump actions/checkout from 4 to 5 ([1debcf5](https://github.com/rectitude-open/filapress-core/commit/1debcf59eed7e598cf36fc030b092d5bf84e2bdd))
+* **deps:** bump actions/checkout from 4 to 5 ([666dd99](https://github.com/rectitude-open/filapress-core/commit/666dd99620fa23b329f8f35d46f662c9f3a6fced))
+* **deps:** bump rectitude-open/filament-ban-manager ([7dc558b](https://github.com/rectitude-open/filapress-core/commit/7dc558b0e07251832884102b6dba198698191bb2))
+* **deps:** bump rectitude-open/filament-ban-manager from 1.10.3 to 1.11.0 ([97f34bc](https://github.com/rectitude-open/filapress-core/commit/97f34bc1105d9835e50876ae23b2b92539cc03f6))
+* **deps:** bump rectitude-open/filament-contact-logs ([e2376aa](https://github.com/rectitude-open/filapress-core/commit/e2376aad4ea6300f614918b6d5d4dbf0b15eda61))
+* **deps:** bump rectitude-open/filament-contact-logs from 1.3.0 to 1.4.0 ([86b0bdf](https://github.com/rectitude-open/filapress-core/commit/86b0bdf72c0d28674566ad2e3d7c28ff5f0dd566))
+* **deps:** bump rectitude-open/filament-info-pages ([c60f720](https://github.com/rectitude-open/filapress-core/commit/c60f720f73e078969ad148c8047452d5ce7bf203))
+* **deps:** bump rectitude-open/filament-info-pages ([9cf9ba8](https://github.com/rectitude-open/filapress-core/commit/9cf9ba8eaaf10ed66eca7117c8aa068d6fec0db2))
+* **deps:** bump rectitude-open/filament-info-pages from 1.11.1 to 1.12.0 ([7933c4c](https://github.com/rectitude-open/filapress-core/commit/7933c4c2b567a79123520ee188f56251a6833750))
+* **deps:** bump rectitude-open/filament-info-pages from 1.12.0 to 1.13.0 ([2a2f294](https://github.com/rectitude-open/filapress-core/commit/2a2f294219fdf3a8a55047e3baf078e74439da61))
+* **deps:** bump rectitude-open/filament-news from 1.17.2 to 1.18.0 ([3ed87d8](https://github.com/rectitude-open/filapress-core/commit/3ed87d8586b848a45a24ceb176c9bab4471f35f4))
+* **deps:** bump rectitude-open/filament-news from 1.17.2 to 1.18.0 ([7b6d2a3](https://github.com/rectitude-open/filapress-core/commit/7b6d2a31e27e8af50fa30ee8a6e9caaa71300d33))
+* **deps:** bump rectitude-open/filament-people from 1.8.1 to 1.9.0 ([c6f0160](https://github.com/rectitude-open/filapress-core/commit/c6f01607b0c2ecc4e5bc60a88439cafa2043d21c))
+* **deps:** bump rectitude-open/filament-people from 1.8.1 to 1.9.0 ([0c47171](https://github.com/rectitude-open/filapress-core/commit/0c47171fb7671a27e4e1bf2843ef7a0968fc7cbd))
+* **deps:** bump rectitude-open/filament-people from 1.9.0 to 1.10.0 ([938223c](https://github.com/rectitude-open/filapress-core/commit/938223cde7077708d0b57a9962564f749729a855))
+* **deps:** bump rectitude-open/filament-people from 1.9.0 to 1.10.0 ([d012197](https://github.com/rectitude-open/filapress-core/commit/d012197b51fff283b5cd607e7ecc65af8177b099))
+* **deps:** bump rectitude-open/filament-photos from 1.7.2 to 1.8.0 ([a1d1cca](https://github.com/rectitude-open/filapress-core/commit/a1d1cca4bef1dc2dd6be8253b3a14461e6b95039))
+* **deps:** bump rectitude-open/filament-photos from 1.7.2 to 1.8.0 ([5667b7d](https://github.com/rectitude-open/filapress-core/commit/5667b7df0a2d90cbd3ed1ca2fa7b185823577eeb))
+* **deps:** bump rectitude-open/filament-photos from 1.8.0 to 1.9.0 ([c87965f](https://github.com/rectitude-open/filapress-core/commit/c87965fb1c87f362dc05472b9f338dad46be3c42))
+* **deps:** bump rectitude-open/filament-photos from 1.8.0 to 1.9.0 ([6aceaa1](https://github.com/rectitude-open/filapress-core/commit/6aceaa1d8ea14a8a49d9df4d2008c6b7cb2baaf7))
+* **deps:** bump rectitude-open/filament-site-navigation ([74774da](https://github.com/rectitude-open/filapress-core/commit/74774da8316df76b7bd94dcb16fbe5a341f54a94))
+* **deps:** bump rectitude-open/filament-site-navigation ([df3e654](https://github.com/rectitude-open/filapress-core/commit/df3e65458bad64c4d02d0093e7f46c8a22fc2026))
+* **deps:** bump rectitude-open/filament-site-navigation from 1.8.0 to 1.9.0 ([264353d](https://github.com/rectitude-open/filapress-core/commit/264353de4f1b9a972c7d6af11a8f8d9b475660e6))
+* **deps:** bump rectitude-open/filament-site-navigation from 1.9.0 to 1.10.0 ([7793501](https://github.com/rectitude-open/filapress-core/commit/77935012048fb78fed101d30b63a62d2eba70137))
+* **deps:** bump rectitude-open/filament-site-snippets ([486f4b1](https://github.com/rectitude-open/filapress-core/commit/486f4b1c83c59b2a4c62c5d199d64a77239d1b62))
+* **deps:** bump rectitude-open/filament-site-snippets from 1.5.0 to 1.6.0 ([5b930b0](https://github.com/rectitude-open/filapress-core/commit/5b930b01e6b55ce9b71154bff413a7ca27280c76))
+* **deps:** bump solution-forest/filament-tree from 2.1.5 to 2.1.7 ([86f338c](https://github.com/rectitude-open/filapress-core/commit/86f338c007f9a10f503771aea57c6c3ce19bbb16))
+* **deps:** bump solution-forest/filament-tree from 2.1.5 to 2.1.7 ([5f12b4f](https://github.com/rectitude-open/filapress-core/commit/5f12b4f48a4d26a37330f9c93d263d7abf2d8788))
+* **deps:** bump solution-forest/filament-tree from 2.1.7 to 2.1.8 ([0256cc3](https://github.com/rectitude-open/filapress-core/commit/0256cc3158175ae95cd8bcaf8bc2bb9112b5b17e))
+* **deps:** bump solution-forest/filament-tree from 2.1.7 to 2.1.8 ([49b71d0](https://github.com/rectitude-open/filapress-core/commit/49b71d0ffb8592245a0746dab24b0d3d8a3cad7c))
+
 ## [1.9.2](https://github.com/rectitude-open/filapress-core/compare/v1.9.1...v1.9.2) (2025-07-18)
 
 
