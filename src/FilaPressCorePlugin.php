@@ -40,90 +40,12 @@ class FilaPressCorePlugin implements Plugin
 
     public function register(Panel $panel): void
     {
-        $panel
-            ->colors([
-                'primary' => Color::Amber,
-            ])
-            ->authGuard('admin')
-            ->brandName(fn () => config('filament-system-settings.system_settings', SystemSettings::class)::getSiteName())
-            ->brandLogo(fn () => config('filament-system-settings.system_settings', SystemSettings::class)::getLogoUrl())
-            ->favicon(fn () => config('filament-system-settings.system_settings', SystemSettings::class)::getFaviconUrl())
-            ->path('admin-'.config('filapress-core.admin_path', 'admin'))
-            ->login(Login::class)
-            ->font(
-                'Inter',
-                url: asset('/admin-assets/'.config('filapress-core.admin_path', 'admin').'/css/fonts.css'),
-                provider: LocalFontProvider::class,
-            )
-            ->middleware([
-                IPBanned::class,
-                SetTheme::class,
-            ])
-            ->navigationGroups([
-                NavigationGroup::make()
-                    ->label(__('filapress-core::filapress-core.navigation.group.content')),
-                NavigationGroup::make()
-                    ->label(__('filapress-core::filapress-core.navigation.group.security'))
-                    ->collapsed(),
-                NavigationGroup::make()
-                    ->label(__('filapress-core::filapress-core.navigation.group.settings'))
-                    ->collapsed(),
-            ])
-            ->resources([
-                config('filapress-core.admin_filament_resource', AdminResource::class),
-                config('filament-logger.activity_resource'),
-            ])
-            ->plugins([
-                ThemesPlugin::make(),
-                FilamentCaptcha::make(),
-                FilamentShieldPlugin::make(),
-                FilamentUsersPlugin::make(),
-                FilamentBanManagerPlugin::make(),
-                FilamentSystemSettingsPlugin::make(),
-                FilamentLocalePickerPlugin::make(),
-                CuratorPlugin::make()
-                    ->registerNavigation(true)
-                    ->defaultListView('list'),
-            ])
-            ->assets([
-                Css::make(
-                    'curator-css',
-                    asset('admin-assets/'.config('filapress-core.admin_path', 'admin').'/css/awcodes/curator/curator.css')
-                ),
-                Js::make(
-                    'curator-js',
-                    asset('admin-assets/'.config('filapress-core.admin_path', 'admin').'/js/awcodes/curator/components/curation.js')
-                ),
-            ]);
-
         $this->registerPlugins($panel);
     }
 
     public function registerPlugins(Panel $panel): void
     {
-        if (config('filapress-core.plugins.FilamentNewsPlugin', true)) {
-            $panel->plugins([FilamentNewsPlugin::make()]);
-        }
 
-        if (config('filapress-core.plugins.FilamentMailLogPlugin', true)) {
-            $panel->plugins([FilamentMailLogPlugin::make()]);
-        }
-
-        if (config('filapress-core.plugins.FilamentInfoPagesPlugin', true)) {
-            $panel->plugins([FilamentInfoPagesPlugin::make()]);
-        }
-
-        if (config('filapress-core.plugins.FilamentContactLogsPlugin', true)) {
-            $panel->plugins([FilamentContactLogsPlugin::make()]);
-        }
-
-        if (config('filapress-core.plugins.FilamentSiteSnippetsPlugin', true)) {
-            $panel->plugins([FilamentSiteSnippetsPlugin::make()]);
-        }
-
-        if (config('filapress-core.plugins.FilamentSiteNavigationPlugin', true)) {
-            $panel->plugins([FilamentSiteNavigationPlugin::make()]);
-        }
     }
 
     public function boot(Panel $panel): void {}
