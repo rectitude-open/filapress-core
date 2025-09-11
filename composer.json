@@ -16,7 +16,7 @@
     ],
     "require": {
         "php": "^8.2",
-        "bezhansalleh/filament-shield": "4.0.0-beta2",
+        "bezhansalleh/filament-shield": "^4.0",
         "spatie/laravel-package-tools": "^1.92",
         "tomatophp/filament-users": "^4.0"
     },
