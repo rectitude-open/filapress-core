@@ -32,7 +32,7 @@ return [
             'Core.Encoding' => 'UTF-8',
 
             'HTML.Allowed' => implode(',', [
-                'div[class|style]', 'p[class|style]', 'br', 'hr[class|style]',
+                'div[class|style|id]', 'p[class|style|id]', 'br', 'hr[class|style]',
                 'h1[id|class|style]', 'h2[id|class|style]', 'h3[id|class|style]', 'h4[id|class|style]', 'h5[id|class|style]', 'h6[id|class|style]',
                 'section[class|style]', 'nav[class|style]', 'article[class|style]', 'aside[class|style]', 'header[class|style]', 'footer[class|style]', 'main[class|style]',
                 'strong', 'em', 'b', 'i', 'u', 's', 'strike', 'sub', 'sup', 'span[class|style]',
@@ -64,7 +64,7 @@ return [
                 'border', 'border-collapse', 'border-spacing', 'border-color', 'border-style', 'border-width',
                 'width', 'height', 'max-width',
                 'list-style-type',
-                'float', 'clear', 'vertical-align',
+                'float', 'clear', 'vertical-align', 'display'
             ]),
 
             'Attr.EnableID' => true,
@@ -72,6 +72,7 @@ return [
             'AutoFormat.RemoveEmpty' => true,
             'HTML.TargetBlank' => false,
             'HTML.Nofollow' => false,
+            'CSS.AllowTricky' => true,
             'URI.AllowedSchemes' => ['http' => true, 'https' => true, 'mailto' => true, 'tel' => true, 'data' => true, '#' => true],
             'HTML.SafeIframe' => true,
             'URI.SafeIframeRegexp' => '%^(https?:)?//(www\.youtube\.com/embed/|player\.vimeo\.com/video/|www\.bilibili\.com/player\.html\?bvid=)%',
