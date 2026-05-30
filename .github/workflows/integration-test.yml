@@ -55,7 +55,7 @@ jobs:
           echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
 
       - name: Cache Composer dependencies for FilaPress app
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ./filapress-app/${{ steps.composer-cache-app.outputs.dir }}
           key: ${{ runner.os }}-composer-app-${{ hashFiles('**/filapress-app/composer.lock') }}
@@ -63,7 +63,7 @@ jobs:
             ${{ runner.os }}-composer-app-
 
       - name: Cache Vendor folder for FilaPress app
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ./filapress-app/vendor
           key: ${{ runner.OS }}-vendor-app-${{ hashFiles('**/filapress-app/composer.lock') }}
